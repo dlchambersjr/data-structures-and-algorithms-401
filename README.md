@@ -5,4 +5,4 @@ We require a solution that will reverse the contents of an array without using a
 See above
 
 ## Solution
-![array-reverse-whiteboard]()
+![array-reverse-whiteboard](https://raw.githubusercontent.com/dlchambersjr/data-structures-and-algorithms/array_reverse/assets/array-reverse.js.jpg)
