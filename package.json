@@ -1,0 +1,22 @@
+{
+  "name": "data-structures-and-algorithms",
+  "version": "1.0.0",
+  "description": "White Board Code Challenges",
+  "main": "array-reverse.js",
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlchambersjr/data-structures-and-algorithms.git"
+  },
+  "author": "David Chambers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dlchambersjr/data-structures-and-algorithms/issues"
+  },
+  "homepage": "https://github.com/dlchambersjr/data-structures-and-algorithms#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
