@@ -2,19 +2,20 @@
 
 // Module f0r insertShiftArray function
 
- module.exports = (arr, num) => {
- 
-if (arr === [] || num === '') {return null;}
+module.exports = (arr, num) => {
 
- let newArr = []
- let midArr = Math.ceil(arr.length/2);
+    if (arr.length < 1 || num === '') { return null; }
 
-for (let i=0; i<arr.length; i++) {
-    if (i===midArr) {
-        newArr[newArr.length] = num;
+    let newArr = [];
+    let midArr = Math.ceil(arr.length / 2);
+
+    for (let i = 0; i < arr.length; i++) {
+        if (i === midArr) {
+            newArr[newArr.length] = num;
+        }
+        newArr[newArr.length] = arr[i];
     }
-    newArr[newArr.length] = arr[i];
-}
 
-return newArray;
-}
+    return newArr;
+
+};
