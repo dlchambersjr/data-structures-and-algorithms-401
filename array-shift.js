@@ -1,21 +1,21 @@
 'use strict';
 
-// Module f0r insertShiftArray function
+// Module f0r insertShiftArray
 
-module.exports = (arr, num) => {
+module.exports = (originalArray, value) => {
 
-    if (arr.length < 1 || num === '') { return null; }
+  if (originalArray.length < 1 || value === '') { return null; }
 
-    let newArr = [];
-    let midArr = Math.ceil(arr.length / 2);
+  let newArray = [];
+  let midArray = Math.ceil(originalArray.length / 2);
 
-    for (let i = 0; i < arr.length; i++) {
-        if (i === midArr) {
-            newArr[newArr.length] = num;
-        }
-        newArr[newArr.length] = arr[i];
+  for (let i = 0; i < originalArray.length; i++) {
+    if (i === midArray) {
+      newArray[newArray.length] = value;
     }
+    newArray[newArray.length] = originalArray[i];
+  }
 
-    return newArr;
+  return newArray;
 
 };
