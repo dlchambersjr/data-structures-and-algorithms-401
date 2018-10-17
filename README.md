@@ -14,4 +14,4 @@ We require a solution that will reverse the contents of an array without using a
 See above
 
 ## Solution
-![array-reverse-whiteboard](https://raw.githubusercontent.com/dlchambersjr/data-structures-and-algorithms/array-reverse/assets/array-reverse.js.jpg)
+![array-reverse-whiteboard](https://raw.githubusercontent.com/dlchambersjr/data-structures-and-algorithms/master/assets/array-reverse.js.jpg)
