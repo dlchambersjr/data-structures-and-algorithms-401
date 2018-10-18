@@ -1,3 +1,12 @@
+#03 Array Binary Search
+We require a solution that will take in a sorted array of numbers and a value to be found within the array.  The solution will return the index value of the matched value or undefined if the value is not located in the array
+
+## Challenge
+The search needs to be efficient by repeatedly narroowing the search field through the elimation of half of the remaing numbers after each pass. 
+
+## Solution
+![array-binary-search-whiteboard](https://raw.githubusercontent.com/dlchambersjr/data-structures-and-algorithms/master/assets/array-binary-search.jpg)
+
 # 02 Insert/Shift an Array
 We require a solution that will accept both an array and a value to be insterted into the middle of the array
 
