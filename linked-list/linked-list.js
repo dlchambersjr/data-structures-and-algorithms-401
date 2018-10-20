@@ -3,10 +3,23 @@
 class Linkedlist {
   constructor(node = null) {
     this.head = node;
-    this.next = null;
   }
   insert(value) {
-    if (this.head === null) { return null; }
+    console.log(this);
+
+    if (this.head === null) {
+      let newNode = new Node(value, null);
+      this.head = newNode.value;
+      return this;
+    } else {
+      let newNext = this.head;
+      console.log(newNext);
+      this.head = value;
+      console.log(this);
+      let newNode = new Node(value, newNext);
+      console.log(newNode);
+      return newNode;
+    }
   }
 }
 
@@ -33,9 +46,9 @@ Linkedlist.prototype.print = () => {
 
 
 //Catch errors and handles the results
-function errorHandler() {
+// function errorHandler() {
 
-}
+// }
 
 module.exports = {
   Linkedlist: Linkedlist,

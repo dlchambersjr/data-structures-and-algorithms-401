@@ -3,7 +3,7 @@ module.exports = function () {
   return {
 
     files: ['linked-list/**/*.js', '!linked-list/**/*.test.js'],
-  
+
 
     tests: ['linked-list/**/*.test.js'],
 

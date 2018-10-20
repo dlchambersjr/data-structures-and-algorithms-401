@@ -2,13 +2,10 @@
 
 const listClasses = require('./linked-list');
 
-console.log(listClasses);
-
 const Linkedlist = listClasses.Linkedlist;
 const Node = listClasses.Node;
 
-
-describe('Test the creation of each class', () => {
+xdescribe('Test the creation of each class', () => {
 
   it('should create a new LinkedList and return null for both .head and .next', () => {
 
@@ -42,22 +39,43 @@ describe('Test the creation of each class', () => {
 
 describe('Test the insertion of a new node into the list.', () => {
 
-  it('should return null if the list is empty', () => {
+  xit(`should return head when the list is empty to 'a'`, () => {
 
-    const currentList = new Linkedlist();
+    const emptyList = new Linkedlist();
 
-    const actual = currentList.insert('a');
-    const expected = null;
+    const actual = emptyList.insert('a');
+    const expected = 'a';
 
-    expect(actual).toBe(expected);
+    expect(actual.head).toBe(expected);
 
   });
 
-  it('should return the current head if there are nodes.', () => { });
+  xit('should return the current head if there are nodes.', () => {
 
-  it('should return the current next if there are nodes.', () => { });
+    const filledList = new Linkedlist();
+    filledList.insert('a');
 
-  it('should return the new nodes next after insertion', () => { });
+    const actual = filledList.insert('b');
+    const expected = 'a';
+
+    expect(actual.head).toBe(expected);
+
+  });
+
+  it('should return the 1st nodes next if there are nodes.', () => {
+    const filledList = new Linkedlist();
+    filledList.insert('a');
+    filledList.insert('b');
+
+    const actual = filledList.insert('c');
+    const expected = 'b';
+
+    expect(actual.next).toBe(expected);
+
+
+  });
+
+  xit('should return the new nodes next after insertion', () => { });
 
 });
 
