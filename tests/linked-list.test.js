@@ -1,7 +1,6 @@
 'use strict';
 
 const listClasses = require('../libs/linked-list/linked-list');
-
 const Linkedlist = listClasses.Linkedlist;
 const Node = listClasses.Node;
 
@@ -38,10 +37,7 @@ describe('Test the insertion of a new node into the list.', () => {
   it(`should return head = 'a' when the list is empty`, () => {
 
     const emptyList = new Linkedlist();
-    console.log(emptyList);
-
     const actual = emptyList.insert('a');
-    console.log(actual);
     const expected = 'a';
 
     expect(actual.head.value).toBe(expected);
@@ -51,14 +47,10 @@ describe('Test the insertion of a new node into the list.', () => {
   it(`should return head = 'b' if the list is not empty.`, () => {
 
     const filledList = new Linkedlist();
-    console.log(filledList);
     filledList.insert('a');
-    console.log(filledList);
 
     const actual = filledList.insert('b');
-    console.log(filledList);
     const expected = 'b';
-
     expect(actual.head.value).toBe(expected);
 
   });
@@ -66,12 +58,10 @@ describe('Test the insertion of a new node into the list.', () => {
   it(`should return next = 'b' of the node being inserted.`, () => {
     const filledList = new Linkedlist();
     filledList.insert('a');
-    filledList.insert('b');
-    console.log(filledList);
 
-    const actual = filledList.insert('c');
-    console.log(filledList);
-    const expected = 'b';
+    const actual = filledList.insert('b');
+    const expected = 'a';
+
 
     expect(actual.head.next.value).toBe(expected);
 
@@ -90,7 +80,6 @@ describe('Test to see if a particualr value is in list', () => {
     includedList.insert('c');
 
     const actual = includedList.includes('d');
-    console.log(actual);
 
     expect(actual).toBeFalsy();
 
@@ -104,10 +93,13 @@ describe('Test to see if a particualr value is in list', () => {
     includedList.insert('c');
 
     const actual = includedList.includes('a');
-    console.log(actual);
 
     expect(actual).toBeTruthy();
   });
+
+  TODO:
+  xit(`should return 'EMPTY LIST' if the list is empty`, () => { });
+
 
 });
 

@@ -1,5 +1,7 @@
 'use strict';
 
+// TODO: Error handling needs to be added
+
 class Linkedlist {
   constructor(node = null) {
     this.head = node;
@@ -12,6 +14,7 @@ class Linkedlist {
     return this;
   }
 
+  //search for a value in the list
   includes(value) {
     while (this.head) {
       if (this.head.value === value) { return true; }
@@ -20,6 +23,7 @@ class Linkedlist {
     return false;
   }
 
+  // display the list
   print() {
     let listContents = [];
 
@@ -41,11 +45,6 @@ class Node {
     this.next = next;
   }
 }
-
-//Catch errors and handles the results
-// function errorHandler() {
-
-// }
 
 module.exports = {
   Linkedlist: Linkedlist,

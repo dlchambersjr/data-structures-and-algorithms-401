@@ -4,7 +4,7 @@
 Problem Domain:  A solution is needed that will create a class called ```Linkedlist```.  This class will accept nodes and maintain a ```head``` property to point to the first node in the list.  Three methods will be attached to ```Linkedlist```, (```insert```, ```includes```, and ```print```), to manipulate the list.  There will also be a ```Node``` class that will create instances of ```Node``` to be added to the linked list.
 
 ## Challenge
-
+Same as above...
 
 ## Methods
 
@@ -16,20 +16,40 @@ Problem Domain:  A solution is needed that will create a class called ```Linkedl
 ### includes(arity 1)
 * Used to find a particular value in the list.
 * It will receive a value to be searched for.
-* it will a boolean reponse for if the value exists or not.
+* it will return a boolean response based on whether the value exists or not.
 
 ### print(arity 0)
 * Used to display the values of all nodes in the list.
-* Does not reveive any values
+* Does not receive any values
 
 ## Testing
-The following tests should be performed:
+ALL TESTS PASS WITH 100% Coverage
+
+The following tests were performed:
+
 ### Verify the classes work
-* Can I create an empty Linkedlist
-* Can I create an new Node
+* Can I create an empty list - expects null for head
+* Can I create an new node - expects 'Code Fellows' for value and null for next
 
 ### Insert
-* insert-1: Are there any nodes.
-* insert-2: 
+* insert-1: Inserting to an empty list - expects 'a' for the head from the node being added.
+* insert-2: Inserting when other nodes are present - expects the value of the head to equal 'b'
+* insert-2: Inserting when other nodes are present - expects the value of the inserted node's next to be 'a'
+
+TODO: * Did a value get passed
+
+### Include
+* include-1: Return false if the value is NOT in the list
+* include-2: Return true if the value IS in the list
+
+TODO: * include-3: Return 'List is empty' if there is nothing in the list.
+
+TODO: * Did a value get passed
+
+### Print
+* print-1: Returns 'EMPTY' if the list is empty
+* print-2: Returns the list in form of a string of comma-separated values.
+
+
 
 
