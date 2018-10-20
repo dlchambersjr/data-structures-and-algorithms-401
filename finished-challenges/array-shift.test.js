@@ -1,7 +1,7 @@
 'use strict';
 
 //require the array-shift module that contains the insertShiftArray function
-const insertShiftArray = require('../array-shift');
+const insertShiftArray = require('../libs/array-shift');
 
 describe('Testing insertShiftArray Results', () => {
 

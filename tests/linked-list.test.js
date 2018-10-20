@@ -1,6 +1,6 @@
 'use strict';
 
-const listClasses = require('./linked-list');
+const listClasses = require('../libs/linked-list/linked-list');
 
 const Linkedlist = listClasses.Linkedlist;
 const Node = listClasses.Node;
