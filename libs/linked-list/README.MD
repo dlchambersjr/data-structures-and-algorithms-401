@@ -34,22 +34,15 @@ The following tests were performed:
 ### Insert
 * insert-1: Inserting to an empty list - expects 'a' for the head from the node being added.
 * insert-2: Inserting when other nodes are present - expects the value of the head to equal 'b'
-* insert-2: Inserting when other nodes are present - expects the value of the inserted node's next to be 'a'
-
-TODO: * Did a value get passed
+* insert-3: Inserting when other nodes are present - expects the value of the inserted node's next to be 'a'
+* insert-4: Verify a value is passed to insert - returns 'Please pass a value to be added'
 
 ### Include
 * include-1: Return false if the value is NOT in the list
 * include-2: Return true if the value IS in the list
-
-TODO: * include-3: Return 'List is empty' if there is nothing in the list.
-
-TODO: * Did a value get passed
+* include-3: Check to see if a value is passed - returns 'A Value is required'
+* include-4: Check to see if there is a list to search - returns 'Nothing to search - EMPTY LIST'
 
 ### Print
-* print-1: Returns 'EMPTY' if the list is empty
+* print-1: Returns 'EMPTY' if the list is empty/doesn't exist
 * print-2: Returns the list in form of a string of comma-separated values.
-
-
-
-

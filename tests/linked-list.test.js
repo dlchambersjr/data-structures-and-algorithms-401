@@ -1,5 +1,7 @@
 'use strict';
 
+// Testing module for linked-list.js
+
 const listClasses = require('../libs/linked-list/linked-list');
 const Linkedlist = listClasses.Linkedlist;
 const Node = listClasses.Node;
@@ -62,9 +64,17 @@ describe('Test the insertion of a new node into the list.', () => {
     const actual = filledList.insert('b');
     const expected = 'a';
 
-
     expect(actual.head.next.value).toBe(expected);
+  });
 
+  it(`should return 'Please pass a value to be added' if no value is passed`, () => {
+
+    const filledList = new Linkedlist();
+
+    const actual = filledList.insert();
+    const expected = 'Please pass a value to be added';
+
+    expect(actual).toBe(expected);
 
   });
 
@@ -97,9 +107,23 @@ describe('Test to see if a particualr value is in list', () => {
     expect(actual).toBeTruthy();
   });
 
-  TODO:
-  xit(`should return 'EMPTY LIST' if the list is empty`, () => { });
+  it(`should return null if the list is empty`, () => {
+    const includedList = new Linkedlist();
+    const actual = includedList.includes();
+    const expected = 'A value is required';
 
+    expect(actual).toBe(expected);
+
+  });
+
+  it(`should return 'EMPTY LIST' if the list is empty`, () => {
+
+    const includedList = new Linkedlist();
+    const actual = includedList.includes('a');
+    const expected = 'Nothing to search - EMPTY LIST';
+
+    expect(actual).toBe(expected);
+  });
 
 });
 
