@@ -23,9 +23,11 @@ class Linkedlist {
     // Check if there is anything to search
     if (!this.head) { return 'Nothing to search - EMPTY LIST'; }
 
-    while (this.head) {
-      if (this.head.value === value) { return true; }
-      else { this.head = this.head.next; }
+    let current = this.head;
+
+    while (current) {
+      if (current.value === value) { return true; }
+      else { current = current.next; }
     }
     return false;
   }
@@ -34,12 +36,14 @@ class Linkedlist {
   print() {
     let listContents = [];
 
-    if (!this.head) {
+    let current = this.head;
+
+    if (!current) {
       return 'EMPTY';
     } else {
-      while (this.head) {
-        listContents.push(this.head.value);
-        this.head = this.head.next;
+      while (current) {
+        listContents.push(current.value);
+        current = current.next;
       }
       return listContents.join(',');
     }
