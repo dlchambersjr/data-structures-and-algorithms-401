@@ -33,16 +33,35 @@ class Linkedlist {
   // display the list
   print() {
     let listContents = [];
-
-    if (!this.head) {
+    let current = this.head;
+    if (!current) {
       return 'EMPTY';
     } else {
-      while (this.head) {
-        listContents.push(this.head.value);
-        this.head = this.head.next;
+      while (current) {
+        listContents.push(current.value);
+        current = current.next;
       }
       return listContents.join(',');
     }
+  }
+
+  // Append a value to the list
+  append(value) {
+    let currentNode = this.head;
+
+    if (!value) { return 'Please pass a value to be added'; }
+
+    if (!currentNode) {
+      currentNode = new Node(value, currentNode);
+      return currentNode;
+    }
+
+    while (currentNode.next) {
+      currentNode = currentNode.next;
+    }
+
+    currentNode.next = new Node(value, currentNode.next);
+    return this;
   }
 }
 
@@ -52,6 +71,7 @@ class Node {
     this.next = next;
   }
 }
+
 
 module.exports = {
   Linkedlist: Linkedlist,
