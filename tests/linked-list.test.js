@@ -13,6 +13,7 @@ describe('Test the creation of each class', () => {
     const list = new Linkedlist();
 
     const actualHead = list.head;
+
     const expectedHead = null;
     expect(actualHead).toBe(expectedHead);
 
