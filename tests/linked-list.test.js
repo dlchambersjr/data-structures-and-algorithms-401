@@ -6,7 +6,7 @@ const listClasses = require('../libs/linked-list/linked-list');
 const Linkedlist = listClasses.Linkedlist;
 const Node = listClasses.Node;
 
-describe('Test the creation of each class', () => {
+xdescribe('Test the creation of each class', () => {
 
   it('should create a new LinkedList and return null for both .head and .next', () => {
 
@@ -35,7 +35,7 @@ describe('Test the creation of each class', () => {
 
 });
 
-describe('Test the insertion of a new node into the list.', () => {
+xdescribe('Test the insertion of a new node into the list.', () => {
 
   it(`should return head = 'a' when the list is empty`, () => {
 
@@ -81,7 +81,7 @@ describe('Test the insertion of a new node into the list.', () => {
 
 });
 
-describe('Test to see if a particualr value is in list', () => {
+xdescribe('Test to see if a particualr value is in list', () => {
 
   it('should return false if the value is not present', () => {
 
@@ -128,7 +128,7 @@ describe('Test to see if a particualr value is in list', () => {
 
 });
 
-describe('Test to see if the list can be displayed', () => {
+xdescribe('Test to see if the list can be displayed', () => {
 
   it(`should return 'EMPTY' if there is nothing in the list`, () => {
     const printList = new Linkedlist();
@@ -154,3 +154,65 @@ describe('Test to see if the list can be displayed', () => {
   });
 
 });
+
+xdescribe('Tests to APPEND a node to the END of the list', () => {
+
+  it('should append to the end if the list is empty', () => {
+    const appendList = new Linkedlist();
+
+    const actual = appendList.append('a');
+
+    expect(actual.next).toBeNull();
+
+  });
+
+  it('should append to the list if there are already nodes', () => {
+
+    const appendList = new Linkedlist();
+    appendList.insert('a');
+    appendList.insert('b');
+    appendList.insert('c');
+
+    appendList.append('5');
+
+    const actual = appendList.head.next.next.next.next;
+
+    expect(actual).toBeNull();
+
+
+  });
+
+  it('it should only append if there is a value passed', () => {
+
+    const appendList = new Linkedlist();
+
+    const actual = appendList.append();
+    const expected = 'Please pass a value to be added';
+
+    expect(actual).toBe(expected);
+
+  });
+
+});
+
+xdescribe('Tests to INSERT a node BEFORE a node with a specifc value', () => {
+
+  it('should insert if the list is empty', () => { });
+
+  it('should insert before the target node if there are items in the list', () => { });
+
+  it('should insert before the first node with targeted value', () => { });
+
+});
+
+xdescribe('Tests to INSERT a node AFTER a node with a specific value', () => {
+
+  it('should insert if the list is empty', () => { });
+
+  it('should insert after the target node if there are items in the list', () => { });
+
+  it('should insert after the first node with targeted value', () => { });
+
+});
+
+

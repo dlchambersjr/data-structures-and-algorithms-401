@@ -48,6 +48,25 @@ class Linkedlist {
       return listContents.join(',');
     }
   }
+
+  // Append a value to the list
+  append(value) {
+    let currentNode = this.head;
+
+    if (!value) { return 'Please pass a value to be added'; }
+
+    if (!currentNode) {
+      currentNode = new Node(value, currentNode);
+      return currentNode;
+    }
+
+    while (currentNode.next) {
+      currentNode = currentNode.next;
+    }
+
+    currentNode.next = new Node(value, currentNode.next);
+    return this;
+  }
 }
 
 class Node {
@@ -56,6 +75,7 @@ class Node {
     this.next = next;
   }
 }
+
 
 module.exports = {
   Linkedlist: Linkedlist,
