@@ -1,3 +1,19 @@
+# 06 - Linked List Insertions
+Problem Domain:
+
+# Challenge
+
+# Methods
+
+append ()
+insertBefore()
+insertAfter ()
+
+## Solution
+![whiteboard](https://raw.githubusercontent.com/dlchambersjr/data-structures-and-algorithms/master/assets/ll-insertions.jpg)
+
+
+
 # Lab-05 Linked lists (SINGLY LINKED LIST)
 
 ## Summary
