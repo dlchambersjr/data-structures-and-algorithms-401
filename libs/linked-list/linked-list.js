@@ -23,9 +23,11 @@ class Linkedlist {
     // Check if there is anything to search
     if (!this.head) { return 'Nothing to search - EMPTY LIST'; }
 
-    while (this.head) {
-      if (this.head.value === value) { return true; }
-      else { this.head = this.head.next; }
+    let current = this.head;
+
+    while (current) {
+      if (current.value === value) { return true; }
+      else { current = current.next; }
     }
     return false;
   }
@@ -33,7 +35,9 @@ class Linkedlist {
   // display the list
   print() {
     let listContents = [];
+
     let current = this.head;
+
     if (!current) {
       return 'EMPTY';
     } else {
