@@ -67,8 +67,35 @@ class Linkedlist {
     currentNode.next = new Node(value, currentNode.next);
     return this;
   }
+
+  findKth(k) {
+
+    // check for an empty list
+    if (this.head === null) { return 'Empty List'; }
+
+    let search = this.head;
+    let follow = this.head;
+    let count = 0;
+
+    //Move the search 'k' ahead of the follower
+    while (count < k) {
+      if (search.next === null) { return 'List is too small'; }
+      search = search.next;
+      count++;
+    }
+
+    // move both search and follow until search reaches the end of the list
+    while (search.next != null) {
+      search = search.next;
+      follow = follow.next;
+    }
+
+    return follow.value;
+  }
+
 }
 
+// Define the Node Class
 class Node {
   constructor(value, next) {
     this.value = value;

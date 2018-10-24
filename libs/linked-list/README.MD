@@ -1,3 +1,21 @@
+# 7 - Linked List kth from the end.
+Problem Domain:  Create a solution that will take an established liked list and find the value that is located "kth" from the end.
+
+# Challenge
+I need to create a method with an arity of 1 that receives a value.  It will then iterate over the list and find the value that is equal to the node in the linked list position that is equal to the position (value) from the end of the list.
+
+# Methods
+
+### findKth()
+* Arity of 1
+* Receives an argument that is used to indicate the kth node from the back.
+* Once found, it will return the value of the node at the kth position.
+
+## Solution
+![whiteboard](https://raw.githubusercontent.com/dlchambersjr/data-structures-and-algorithms/master/assets/ll-kth-from-end.jpg)
+
+
+
 # 06 - Linked List Insertions
 Problem Domain:
 
