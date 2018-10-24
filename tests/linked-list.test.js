@@ -155,6 +155,7 @@ xdescribe('Test to see if the list can be displayed', () => {
 
 });
 
+// Lab-06
 xdescribe('Tests to APPEND a node to the END of the list', () => {
 
   it('should append to the end if the list is empty', () => {
@@ -215,4 +216,68 @@ xdescribe('Tests to INSERT a node AFTER a node with a specific value', () => {
 
 });
 
+// Lab-07 kth from the end
+describe('Test for inserting a node kth from the end', () => {
 
+  it('should return the value of the last node when kth from end is equal to the last node', () => {
+
+    const endOfList = new Linkedlist();
+    endOfList.insert('0');
+    endOfList.insert('1');
+    endOfList.insert('2');
+    endOfList.insert('3');
+    endOfList.insert('4');
+
+
+
+    const actual = endOfList.findKth(0);
+    const expected = '0';
+
+    expect(actual).toBe(expected);
+
+  });
+
+  it('should return the value of the first node when kth from end is equal to the first node', () => {
+
+    const endOfList = new Linkedlist();
+    endOfList.insert('0');
+    endOfList.insert('1');
+    endOfList.insert('2');
+    endOfList.insert('3');
+    endOfList.insert('4');
+
+    const actual = endOfList.findKth(4);
+    const expected = '4';
+
+    expect(actual).toBe(expected);
+
+  });
+
+  it(`should return 'Empty List' when there are no nodes`, () => {
+
+    const endOfList = new Linkedlist();
+
+    const actual = endOfList.findKth(4);
+    const expected = 'Empty List';
+
+    expect(actual).toBe(expected);
+
+  });
+
+  it(`should return 'List is too small' when there are no nodes`, () => {
+
+    const endOfList = new Linkedlist();
+    endOfList.insert('0');
+    endOfList.insert('1');
+    endOfList.insert('2');
+    endOfList.insert('3');
+    endOfList.insert('4');
+
+    const actual = endOfList.findKth(5);
+    const expected = 'List is too small';
+
+    expect(actual).toBe(expected);
+
+  });
+
+});
