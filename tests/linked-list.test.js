@@ -217,7 +217,7 @@ xdescribe('Tests to INSERT a node AFTER a node with a specific value', () => {
 });
 
 // Lab-07 kth from the end
-describe('Test for inserting a node kth from the end', () => {
+xdescribe('Test for inserting a node kth from the end', () => {
 
   it('should return the value of the last node when kth from end is equal to the last node', () => {
 
@@ -280,4 +280,30 @@ describe('Test for inserting a node kth from the end', () => {
 
   });
 
+});
+
+//Lab-08 Merge two lists
+
+xdescribe('Test for inserting a node kth from the end', () => {
+  it('should return the value of the last node when kth from end is equal to the last node', () => {
+
+    const firstList = new Linkedlist();
+    const secondList = new Linkedlist();
+    const thirdList = new Linkedlist();
+
+    firstList.insert('5');
+    firstList.insert('3');
+    firstList.insert('1');
+    secondList.insert('6');
+    secondList.insert('4');
+    secondList.insert('2');
+
+    console.log(firstList);
+
+    const actual = thirdList.merge(firstList, secondList);
+    console.log(actual);
+    const expected = '';
+
+    expect(actual.toBe(expected);
+  });
 });

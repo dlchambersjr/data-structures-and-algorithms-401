@@ -93,6 +93,43 @@ class Linkedlist {
     return follow.value;
   }
 
+  merge(firstList, secondList) {
+
+
+
+    let listA = firstList.head;
+    let listB = secondList.head;
+    let listC = firstList.head;
+
+    console.log(listA);
+    console.log(listB);
+    console.log(listC);
+
+    // if (listA === null && listB === null) { return 'Nothing to merge'; }
+    // if (listA === null && listB) { return listB; }
+    // if (!listB && listA) { return listA; }
+
+    while (listA.next && listB.next) {
+      console.log(listA.next && listB.next);
+
+
+
+      listC.next = listB;
+      console.log(listC);
+
+      listC = listC.next;
+      listB = listB.next;
+      listC.next = listA;
+      listC = listC.next;
+      listA = listA.next;
+      console.log(listC);
+
+    }
+    console.log(listC);
+    return listC;
+  }
+
+
 }
 
 // Define the Node Class
