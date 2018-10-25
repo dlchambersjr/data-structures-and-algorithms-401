@@ -11,7 +11,7 @@ Problem Domain:
 * Receives two linked lists and returns a new list that has "zippered".
 
 ## Solution
-![whiteboard](https://raw.githubusercontent.com/dlchambersjr/data-structures-and-algorithms/master/assets/????????.jpg)
+![whiteboard](https://raw.githubusercontent.com/dlchambersjr/data-structures-and-algorithms/master/assets/ll-merge.jpg)
 
 
 
