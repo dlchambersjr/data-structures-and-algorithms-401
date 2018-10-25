@@ -1,3 +1,20 @@
+# 8 - Merge two linked lists
+Problem Domain:  
+
+# Challenge
+
+
+# Methods
+
+### merge()
+* Arity of 2
+* Receives two linked lists and returns a new list that has "zippered".
+
+## Solution
+![whiteboard](https://raw.githubusercontent.com/dlchambersjr/data-structures-and-algorithms/master/assets/ll-merge.jpg)
+
+
+
 # 7 - Linked List kth from the end.
 Problem Domain:  Create a solution that will take an established liked list and find the value that is located "kth" from the end.
 

@@ -93,7 +93,43 @@ class Linkedlist {
     return follow.value;
   }
 
-}
+  merge(firstList, secondList) {
+
+    console.log(firstList);
+    console.log(secondList);
+
+    let before = firstList.head;
+    let current = secondList.head;
+    let after = before.next;
+
+
+    console.log(before);
+    console.log(current);
+
+
+
+    while (current !== null) {
+      before.next = current;
+      current = after;
+      after = before.next;
+    }
+
+    // secondList.head = null;
+
+    console.log(firstList);
+    console.log(secondList);
+    console.log(before);
+    console.log(current);
+    console.log(after);
+
+    return;
+
+  }
+
+
+
+
+} //end of LinkList Class
 
 // Define the Node Class
 class Node {
@@ -104,7 +140,9 @@ class Node {
 }
 
 
+
 module.exports = {
-  Linkedlist: Linkedlist,
-  Node: Node,
+  Linkedlist,
+  Node,
+
 };
