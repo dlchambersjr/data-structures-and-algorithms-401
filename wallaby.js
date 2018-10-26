@@ -2,7 +2,7 @@ module.exports = function () {
 
   return {
 
-    files: ['libs/**/*.js', '!linked-list/**/*.test.js'],
+    files: ['libs/**/*.js'],
 
 
     tests: ['tests/**/*.test.js'],
