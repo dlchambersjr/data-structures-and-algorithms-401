@@ -14,18 +14,39 @@ class Stack {
 
   // Add a value to the top of the stack
   push(value) {
-    return this.storage.push(new Node(value));
+    if (value) {
+      this.storage.push(new Node(value));
+      this.top = this.peek();
+      return this;
+    } else return 'Please enter a number';
   }
 
   // remove a value from the top of the stack
   pop() {
-    return this.storage.pop();
+
+    if (this.storage.length >= 2) {
+      this.top = this.storage[this.storage.length - 2];
+      return this.storage.pop();
+    }
+
+    if (this.storage.length === 1) {
+      this.top = null;
+      return this.storage.pop();
+    }
+
+    else { return 'EMPTY STACK'; }
   }
 
   // Look a the top of the stack
   peek() {
-    return this.storage[this.storage.length - 1];
+    if (this.storage.length > 0) {
+      return this.storage[this.storage.length - 1];
+    } else {
+      this.top = null;
+      return 'EMPTY LIST';
+    }
   }
+
 }
 
 class Queue {
@@ -46,7 +67,7 @@ class Queue {
   }
 
   // Look a the first value in the Queue
-  front() {
+  peek() {
     return this.storage[this.storage.length - 1];
   }
 }
