@@ -56,7 +56,7 @@ describe(`Test the push method for stacks`, () => {
 
   });
 
-  it(`should throw an error if no value is sent`, () => {
+  it(`should ask for a number if no value is sent`, () => {
 
     const pushStack = new Stack();
     const actual = pushStack.push();
@@ -68,11 +68,11 @@ describe(`Test the push method for stacks`, () => {
 
 describe(`Test the pop method for stacks`, () => {
 
-  it(`should return 'EMPTY LIST' if there are no values in the stack`, () => {
+  it(`should return 'EMPTY STACK' if there are no values in the stack`, () => {
 
     const emptyPopStack = new Stack();
 
-    const actual = emptyPopStack.pop()
+    const actual = emptyPopStack.pop();
     expect(actual).toBe('EMPTY STACK');
 
   });
@@ -90,7 +90,7 @@ describe(`Test the pop method for stacks`, () => {
 
   });
 
-  it(`should return top as null when the last value of the stack is popped.`, () => {
+  it(`should set top as null when the last value of the stack is popped.`, () => {
 
     const oneItemPopStack = new Stack();
     oneItemPopStack.push(1);
@@ -120,11 +120,11 @@ describe(`Test the peek method for stacks`, () => {
 
   });
 
-  it(`should return 'EMPTY LIST' when there are no values inthe stack`, () => {
+  it(`should return 'EMPTY STACK' when there are no values inthe stack`, () => {
     const peekStack = new Stack();
 
     const actual = peekStack.peek();
-    expect(actual).toBe('EMPTY LIST');
+    expect(actual).toBe('EMPTY STACK');
 
   });
 
@@ -165,20 +165,19 @@ describe(`Test the enqueue method`, () => {
 
   });
 
-  xit(`should add a value to the back and NOT change the front when the queue already already has values`, () => {
+  it(`should add a value to the back and NOT change the front when the queue already already has values`, () => {
 
-    const pushStack = new Stack();
+    const addToQueue = new Queue();
 
-    pushStack.push(1);
-    pushStack.push('a');
+    addToQueue.enqueue(1);
+    addToQueue.enqueue('a');
 
-    const actual = pushStack.peek();
-    expect(actual.value).toBe('a');
-    expect(pushStack.top.value).toBe('a');
+    const actual = addToQueue.peek();
+    expect(actual.value).toBe(1);
 
   });
 
-  xit(`should throw an error if no value is sent`, () => {
+  it(`should return 'Please enter a number' if no value is sent`, () => {
 
     const pushStack = new Stack();
     const actual = pushStack.push();
@@ -188,77 +187,45 @@ describe(`Test the enqueue method`, () => {
 
 });
 
-xdescribe(`Test the dequeue method`, () => {
+describe(`Test the dequeue method`, () => {
 
-  it(`should add values to the Queue from the back and return the first value added`, () => {
+  it(`should remove values from the Queue from the front and repoint front to the new front`, () => {
 
-    const enterQueue = new Queue();
-
-    for (let i = 1; i < 6; i++) {
-      enterQueue.enqueue(i);
-    }
-
-    const actual = enterQueue.peek();
-    expect(actual.value).toBe(1);
-
-  });
-
-  it(`should remove the front value in the queue and return it`, () => {
     const exitQueue = new Queue();
 
-    for (let i = 10; i > 0; i--) {
+    for (let i = 1; i < 6; i++) {
       exitQueue.enqueue(i);
     }
 
     const actual = exitQueue.dequeue();
-
-    expect(actual.value).toBe(10);
-
+    expect(actual.value).toBe(1);
+    expect(exitQueue.front.value).toBe(2);
 
   });
 
-  it(`should return the value at the front of the Queue`, () => {
+  it(`should set the front to null when removing the last value in the queue`, () => {
+    const lastValueQueue = new Queue();
+
+    lastValueQueue.enqueue('Z');
+
+    const actual = lastValueQueue.dequeue();
+    const actualFront = lastValueQueue.peek();
+    expect(actual.value).toBe('Z');
+    expect(actualFront).toBe('EMPTY QUEUE');
+
+  });
+
+  it(`should return 'EMPTY QUEUE' if the list is empty`, () => {
     const peekQueue = new Queue();
 
-    for (let i = 1; i < 11; i++) {
-      peekQueue.enqueue(i);
-    }
-
-    const actual = peekQueue.peek();
-    expect(actual.value).toBe(1);
+    const actual = peekQueue.dequeue();
+    expect(actual).toBe('EMPTY QUEUE');
 
   });
 
 });
 
-xdescribe(`Test the peek method for the Queue`, () => {
-
-  it(`should add values to the Queue from the back and return the first value added`, () => {
-
-    const enterQueue = new Queue();
-
-    for (let i = 1; i < 6; i++) {
-      enterQueue.enqueue(i);
-    }
-
-    const actual = enterQueue.peek();
-    expect(actual.value).toBe(1);
-
-  });
-
-  it(`should remove the front value in the queue and return it`, () => {
-    const exitQueue = new Queue();
-
-    for (let i = 10; i > 0; i--) {
-      exitQueue.enqueue(i);
-    }
-
-    const actual = exitQueue.dequeue();
-
-    expect(actual.value).toBe(10);
-
-
-  });
+describe(`Test the peek method for the Queue`, () => {
 
   it(`should return the value at the front of the Queue`, () => {
     const peekQueue = new Queue();
@@ -269,6 +236,14 @@ xdescribe(`Test the peek method for the Queue`, () => {
 
     const actual = peekQueue.peek();
     expect(actual.value).toBe(1);
+
+  });
+
+  it(`should return 'EMPTY QUEUE' if the queue is empty`, () => {
+    const emptyPeekQueue = new Queue();
+
+    const actual = emptyPeekQueue.peek();
+    expect(actual).toBe('EMPTY QUEUE');
 
   });
 

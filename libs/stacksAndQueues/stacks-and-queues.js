@@ -43,7 +43,7 @@ class Stack {
       return this.storage[this.storage.length - 1];
     } else {
       this.top = null;
-      return 'EMPTY LIST';
+      return 'EMPTY STACK';
     }
   }
 
@@ -57,18 +57,36 @@ class Queue {
 
   // Add a value to the end of the Queue
   enqueue(value) {
-    return this.storage.unshift(new Node(value));
+    if (value) {
+      this.storage.unshift(new Node(value));
+      this.front = this.peek();
+      return this;
+    } else return 'Please enter a number';
   }
 
   // remove a value from the front of the Queue
   dequeue() {
-    let exitNode = this.storage.pop();
-    return exitNode;
+
+    if (this.storage.length >= 2) {
+      this.front = this.storage[this.storage.length - 2];
+      return this.storage.pop();
+    }
+
+    if (this.storage.length === 1) {
+      this.front = null;
+      return this.storage.pop();
+    }
+    else { return 'EMPTY QUEUE'; }
   }
 
-  // Look a the first value in the Queue
+  // Look a the front of the Queue
   peek() {
-    return this.storage[this.storage.length - 1];
+    if (this.storage.length > 0) {
+      return this.storage[this.storage.length - 1];
+    } else {
+      this.front = null;
+      return 'EMPTY QUEUE';
+    }
   }
 }
 
