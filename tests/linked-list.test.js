@@ -5,6 +5,7 @@
 const listClasses = require('../libs/linked-list/linked-list');
 const Linkedlist = listClasses.Linkedlist;
 const Node = listClasses.Node;
+
 // const merge = listClasses.merge;
 
 // xdescribe('Test the creation of each class', () => {
@@ -285,9 +286,9 @@ const Node = listClasses.Node;
 
 //Lab-08 Merge two lists
 
-describe('Test for inserting a node kth from the end', () => {
+xdescribe('Test for inserting a node kth from the end', () => {
 
-  it('should return the value of the last node when kth from end is equal to the last node', () => {
+  xit('should return the value of the last node when kth from end is equal to the last node', () => {
 
     const firstList = new Linkedlist();
     const secondList = new Linkedlist();
