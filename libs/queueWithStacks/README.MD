@@ -28,19 +28,13 @@ Same as above...
 ## Queue Methods
 
 ### enqueue(arity 1)
-* Used to add a node to the rear of the queue.
-* It will receive a value to be used when the node is created.
-* It will move the FRONT pointer to redirect to first node in the list.
+*  
 
 ### dequeue(arity 0)
-* Used to remove the the first node in the front of the queue
-* Will return the node being removed or EMPTY QUEUE if there are no nodes present.
-* Will redirect front to be the new first node in the queue
+*  
 
 ### peek(arity 0)
-* Used to reveal the first node in the queue.
-* Does not receive any values
-* Will return EMPTY QUEUE if the queue is empty.
+*  
 
 ## Testing
 ALL TESTS PASS WITH 97.37% Coverage

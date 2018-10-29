@@ -1,11 +1,5 @@
 'use strict';
 
-class Node {
-  constructor(value = null) {
-    this.value = value;
-  }
-}
-
 class Stack {
   constructor() {
     this.top = null;
@@ -15,7 +9,7 @@ class Stack {
   // Add a value to the top of the stack
   push(value) {
     if (value) {
-      this.storage.push(new Node(value));
+      this.storage.push((value));
       this.top = this.peek();
       return this;
     } else return 'Please enter a number';
@@ -49,68 +43,41 @@ class Stack {
 
 }
 
-class Queue {
-  constructor() {
-    this.front = null;
-    this.storage = [];
-  }
-
-  // Add a value to the end of the Queue
-  enqueue(value) {
-    if (value) {
-      this.storage.unshift(new Node(value));
-      this.front = this.peek();
-      return this;
-    } else return 'Please enter a number';
-  }
-
-  // remove a value from the front of the Queue
-  dequeue() {
-
-    if (this.storage.length >= 2) {
-      this.front = this.storage[this.storage.length - 2];
-      return this.storage.pop();
-    }
-
-    if (this.storage.length === 1) {
-      this.front = null;
-      return this.storage.pop();
-    }
-    else { return 'EMPTY QUEUE'; }
-  }
-
-  // Look a the front of the Queue
-  peek() {
-    if (this.storage.length > 0) {
-      return this.storage[this.storage.length - 1];
-    } else {
-      this.front = null;
-      return 'EMPTY QUEUE';
-    }
-  }
-}
-
 class PseudoQueue {
   constructor() {
-    this.front = null;
-    this.storage = [];
+    this.enterStack = new Stack();
+    this.exitStack = new Stack();
   }
 
-  enqueue() {
+  enqueue(value) {
+    if (value) {
+      this.enterStack.storage.push(value);
 
-
+    } else { return 'Please enter a value'; }
   }
 
   dequeue() {
+    let exitValue;
 
+    if (this.enterStack.storage.length > 0) {
+      for (let i = this.enterStack.storage.length; i > 0; i--) {
+        this.exitStack.storage.push(this.enterStack.storage.pop());
+      }
+
+      exitValue = this.exitStack.storage.pop();
+
+      for (let i = this.exitStack.storage.length; i > 0; i--) {
+        this.enterStack.storage.push(this.exitStack.storage.pop());
+      }
+    } else { return 'EMPTY QUEUE'; }
+
+    return exitValue;
   }
 
+} //END of PseudoQueue Class
 
-}
 
 module.exports = {
-  Node,
   Stack,
-  Queue,
   PseudoQueue,
 };
