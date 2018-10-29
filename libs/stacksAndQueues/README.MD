@@ -1,4 +1,4 @@
-# CODE: Stacks and Queues Linked lists (SINGLY LINKED LIST)
+# CODE: Stacks and Queues
 
 ## Summary
 Problem Domain-1:  A solution is needed that will create a class called ```Stack```.  This class will accept nodes from a ```Node``` class to be stored in a ```storage``` property.  It will also maintain a ```top``` property to point to the top node in the stack.  Three methods will be attached to the class, (```push```, ```pop```, and ```peek```), to manipulate the stack.  
