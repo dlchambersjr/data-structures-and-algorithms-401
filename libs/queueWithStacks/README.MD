@@ -1,39 +1,22 @@
 # CODE: Queues with Stacks
 
 ## Summary
-Problem Domain: 
-
-
-
+Problem Domain: A PseudoQueue class needs to be created that has only two stacks as properties.  Then, by using the built in methods of a predefined stack class, two methods, enqueue and dequeue, will be added to the PseudoQueue class to process values in and out of the PseudoQueue.
 
 ## Challenge
-Same as above...
+Users of the PseudoQueue class should not be aware that the methods of push(), pop(), and peek() are being used to actually manage the contents of the queue.
 
-## Stack Methods
 
-### push(arity 1)
-* Used to add a node on the top of the stack.
-* It will receive a value to be used when the node is created.
-* It will move the TOP pointer to redirect to the new node.
+## Solution
+![whiteboard](https://raw.githubusercontent.com/dlchambersjr/data-structures-and-algorithms/master/assets/queues-with-stacks.jpg)
 
-### pop(arity 0)
-* Used to remove the top node from the stack
-* will return the node being removed or EMPTY STACK if there are no nodes present.
-
-### peek(arity 0)
-* Used to reveal the top node on the stack.
-* Does not receive any values
-* Will return EMPTY STACK if the stack is empty.
 
 ## Queue Methods
 
 ### enqueue(arity 1)
-*  
+*  Receives a value to be added to the PseudoQueue
 
 ### dequeue(arity 0)
-*  
-
-### peek(arity 0)
 *  
 
 ## Testing
@@ -41,35 +24,15 @@ ALL TESTS PASS WITH 97.37% Coverage
 
 The following tests were performed:
 
-### Verify the classes work
-* Can I create an empty Stack - expects null for top.
-* Can I create an empty Queue - expects null for queue.
-* Can I create an empty node - expects null value
-
-### Stack.push()
-* push-1: adding to an empty stack and assigning the value.
-* push-2: adding to a stack that has nodes and re-pointing TOP.
-* push-3: asks for a value if nothing is sent.
-
-### Stack.pop()
-* pop-1: Return EMPTY STACK if there are no nodes.
-* pop-2: Remove the top of the stack and re-point the TOP.
-* pop-3: Returns the top Node in the list and sets TOP to null if no node remain.
-
-### Stack.peek()
-* peek-1: Returns 'EMPTY STACK if there are no nodes.
-* peek-2: Returns the top node in the stack.
+### Verify the PseudoQueue class works
+* Can I create an empty instance of a PSeudoQueue.
+* Are two empty instances of the stack class added to the instance of the PseudoQueue.
 
 ### Queue.enqueue()
-* enqueue-1: add a value to the back of the queue when it's empty and assign the value to front.
+* enqueue-1: add a value to the back of the queue when it's empty.
 * enqueue-2: add a value to the rear of the queue when there are already items in the queue.
-* enqueue-3: Return 'Please enter a number' when no value is entered.
+* enqueue-3: Return 'Please enter a value' when no value is entered.
 
 ### Queue.dequeue()
-* dequeue-1: Remove a node from the front of the queue and re-point the front.
-* dequeue-2: Remove the last item in the queue and re-point the front to null.
-* dequeue-3: Return EMPTY QUEUE when trying to remove a value when nothing is there.
-
-### Queue.peek()
-* peek-1: Returns 'EMPTY QUEUE if there are no nodes.
-* peek-2: Returns the first node in the queue.
+* dequeue-1: Remove and return the value at the front of the queue.   
+* dequeue-2: Return EMPTY QUEUE when trying to remove a value when nothing is there.
