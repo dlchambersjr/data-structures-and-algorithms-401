@@ -5,7 +5,7 @@ const Stack = classes.Stack;
 const Node = classes.Node;
 const Queue = classes.Queue;
 
-describe(`Test to verify the proper creation of the Stack class and it's instances`, () => {
+xdescribe(`Test to verify the proper creation of the Stack class and it's instances`, () => {
 
   it(`should create an instance of a stack/node`, () => {
 
@@ -29,7 +29,7 @@ describe(`Test to verify the proper creation of the Stack class and it's instanc
 
 });
 
-describe(`Test the push method for stacks`, () => {
+xdescribe(`Test the push method for stacks`, () => {
 
   it(`should add a value and assign the top to that value when the stack is empty`, () => {
 
@@ -66,7 +66,7 @@ describe(`Test the push method for stacks`, () => {
 
 });
 
-describe(`Test the pop method for stacks`, () => {
+xdescribe(`Test the pop method for stacks`, () => {
 
   it(`should return 'EMPTY STACK' if there are no values in the stack`, () => {
 
@@ -104,7 +104,7 @@ describe(`Test the pop method for stacks`, () => {
 
 });
 
-describe(`Test the peek method for stacks`, () => {
+xdescribe(`Test the peek method for stacks`, () => {
 
   it(`should return the value at the top of the stack`, () => {
     const peekStack = new Stack();
@@ -130,7 +130,7 @@ describe(`Test the peek method for stacks`, () => {
 
 });
 
-describe(`Test to verify the proper creation of the Queue class and it's instances`, () => {
+xdescribe(`Test to verify the proper creation of the Queue class and it's instances`, () => {
 
   it(`should create an empty instance of a queue`, () => {
 
@@ -150,7 +150,7 @@ describe(`Test to verify the proper creation of the Queue class and it's instanc
 
 });
 
-describe(`Test the enqueue method`, () => {
+xdescribe(`Test the enqueue method`, () => {
 
   it(`should add a value from the back and assign front to that value when the queue is empty`, () => {
 
@@ -187,7 +187,7 @@ describe(`Test the enqueue method`, () => {
 
 });
 
-describe(`Test the dequeue method`, () => {
+xdescribe(`Test the dequeue method`, () => {
 
   it(`should remove values from the Queue from the front and repoint front to the new front`, () => {
 
@@ -225,7 +225,7 @@ describe(`Test the dequeue method`, () => {
 
 });
 
-describe(`Test the peek method for the Queue`, () => {
+xdescribe(`Test the peek method for the Queue`, () => {
 
   it(`should return the value at the front of the Queue`, () => {
     const peekQueue = new Queue();
