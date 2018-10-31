@@ -1,12 +1,11 @@
 'use strict';
 
 const classes = require('../libs/queueWithStacks/queue-with-stacks.js');
-const Stack = classes.Stack;
 const PseudoQueue = classes.PseudoQueue;
 
 //PseudoPseudoQueue
 
-describe(`Test to verify the proper creation of the PseudoQueue class`, () => {
+xdescribe(`Test to verify the proper creation of the PseudoQueue class`, () => {
 
   it(`should create an empty instance of a PseudoQueue`, () => {
 
@@ -27,7 +26,7 @@ describe(`Test to verify the proper creation of the PseudoQueue class`, () => {
 
 });
 
-describe(`Test the enqueue method`, () => {
+xdescribe(`Test the enqueue method`, () => {
 
   it(`should add a value from the back when the PseudoQueue is empty`, () => {
 
@@ -75,7 +74,7 @@ describe(`Test the enqueue method`, () => {
 
 });
 
-describe(`Test the dequeue method`, () => {
+xdescribe(`Test the dequeue method`, () => {
 
   it(`should remove and return the first value in the Queue`, () => {
 

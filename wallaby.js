@@ -2,10 +2,10 @@ module.exports = function () {
 
   return {
 
-    files: ['libs/**/*.js'],
+    files: ['libs/fifoAnimalShelter/**/*.js'],
 
 
-    tests: ['tests/**/*.test.js'],
+    tests: ['tests/**/*test.js'],
 
     env: {
 
