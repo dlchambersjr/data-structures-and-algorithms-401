@@ -40,7 +40,6 @@ class Stack {
       return 'EMPTY STACK';
     }
   }
-
 }
 
 class AnimalShelter {
@@ -52,7 +51,6 @@ class AnimalShelter {
   enqueue(type) {
     if (type) {
       this.enterStack.storage.push(type);
-
     } else { return 'Please enter a Cat or Dog'; }
   }
 
@@ -61,27 +59,16 @@ class AnimalShelter {
     let exit = this.exitStack;
     let enter = this.enterStack;
 
-    console.log(preference);
-    console.log(foundAnimal);
-    console.log(exit.storage);
-    console.log(enter);
-
     while (enter.storage.length > 0) {
       exit.storage.push(enter.storage.pop());
     }
 
-    console.log(exit.storage);
-
     while (exit.storage.length > 0) {
-
-      console.log(exit.storage.length);
 
       if (!preference) {
         foundAnimal = exit.storage.pop();
         preference = 'found';
       }
-
-      console.log(exit.storage);
 
       if (preference === 'cat' && exit.peek() === 'cat') {
         foundAnimal = exit.storage.pop();
@@ -93,20 +80,11 @@ class AnimalShelter {
 
       }
 
-      console.log(exit.peek());
-
       if (preference === 'dog' && exit.peek() === 'dog') {
         foundAnimal = exit.storage.pop();
         preference = 'found';
-        console.log(exit.storage);
-        console.log(foundAnimal);
-        console.log(preference);
-
       }
-
-      console.log(exit.storage);
       enter.storage.push(exit.storage.pop());
-      console.log(enter.storage);
     }
 
     if (preference === 'found') {

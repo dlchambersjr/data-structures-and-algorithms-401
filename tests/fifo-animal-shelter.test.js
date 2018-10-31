@@ -74,8 +74,6 @@ describe(`Test the dequeue method`, () => {
     exitShelter.enqueue('dog');
     exitShelter.enqueue('cat');
 
-    console.log(exitShelter);
-
     const actual = exitShelter.dequeue('cat');
     expect(actual).toBe('cat');
     expect(exitShelter.enterStack.storage[0]).toBe('cat');
@@ -91,8 +89,6 @@ describe(`Test the dequeue method`, () => {
     exitShelter.enqueue('dog');
     exitShelter.enqueue('dog');
     exitShelter.enqueue('cat');
-
-    console.log(exitShelter);
 
     const actual = exitShelter.dequeue('dog');
     expect(actual).toBe('dog');
@@ -111,8 +107,6 @@ describe(`Test the dequeue method`, () => {
     exitShelter.enqueue('dog');
     exitShelter.enqueue('dog');
     exitShelter.enqueue('cat');
-
-    console.log(exitShelter);
 
     const actual = exitShelter.dequeue();
     expect(actual).toBe('dog');
