@@ -32,35 +32,23 @@ describe(`Test the enqueue method`, () => {
   it(`should add a value from the back when the AnimalShelter is empty`, () => {
 
     const enterShelter = new AnimalShelter();
-
     enterShelter.enqueue('cat-1');
 
-    console.log(enterShelter.enterStack.storage);
-
     const actual = enterShelter;
-    expect(actual.enterStack.storage[0]).toBe(1);
+    expect(actual.enterStack.storage[0]).toBe('cat-1');
 
   });
 
-  it(`should add and remove values and maintain the correct front value.`, () => {
+  it(`should add, remove,and add values and maintain the correct front value.`, () => {
 
     const addToShelter = new AnimalShelter();
+    addToShelter.enqueue('dog-1');
+    addToShelter.enqueue('cat-1');
 
-    for (let i = 1; i < 6; i++) {
-      addToShelter.enqueue(i);
-    }
-
-    addToShelter.enqueue('a');
-    addToShelter.enqueue('b');
-
-    for (let i = 1; i < 6; i++) {
-      addToShelter.dequeue();
-    }
-
-    addToShelter.enqueue('c');
+    addToShelter.enqueue('cat-2');
 
     const actual = addToShelter;
-    expect(actual.enterStack.storage[0]).toBe('a');
+    expect(actual.enterStack.storage[0]).toBe('dog-1');
 
   });
 
@@ -68,25 +56,68 @@ describe(`Test the enqueue method`, () => {
 
     const noValueShelter = new AnimalShelter();
     const actual = noValueShelter.enqueue();
-    expect(actual).toBe('Please enter a value');
+    expect(actual).toBe('Please enter a Cat or Dog');
 
   });
 
 });
 
-xdescribe(`Test the dequeue method`, () => {
+describe(`Test the dequeue method`, () => {
 
-  it(`should remove and return the first value in the Queue`, () => {
+  it(`should remove and return the first requested cat in the Queue`, () => {
 
     const exitShelter = new AnimalShelter();
 
-    for (let i = 1; i < 6; i++) {
-      exitShelter.enqueue(i);
-    }
+    exitShelter.enqueue('cat');
+    exitShelter.enqueue('cat');
+    exitShelter.enqueue('dog');
+    exitShelter.enqueue('dog');
+    exitShelter.enqueue('cat');
+
+    console.log(exitShelter);
+
+    const actual = exitShelter.dequeue('cat');
+    expect(actual).toBe('cat');
+    expect(exitShelter.enterStack.storage[0]).toBe('cat');
+
+  });
+
+  it(`should remove and return the first dog in the Queue`, () => {
+
+    const exitShelter = new AnimalShelter();
+
+    exitShelter.enqueue('cat');
+    exitShelter.enqueue('cat');
+    exitShelter.enqueue('dog');
+    exitShelter.enqueue('dog');
+    exitShelter.enqueue('cat');
+
+    console.log(exitShelter);
+
+    const actual = exitShelter.dequeue('dog');
+    expect(actual).toBe('dog');
+    expect(exitShelter.enterStack.storage[0]).toBe('cat');
+    expect(exitShelter.enterStack.storage[2]).toBe('dog');
+
+
+  });
+
+  it(`should remove and return the animal in the Queue`, () => {
+
+    const exitShelter = new AnimalShelter();
+
+    exitShelter.enqueue('dog');
+    exitShelter.enqueue('cat');
+    exitShelter.enqueue('dog');
+    exitShelter.enqueue('dog');
+    exitShelter.enqueue('cat');
+
+    console.log(exitShelter);
 
     const actual = exitShelter.dequeue();
-    expect(actual).toBe(1);
-    expect(exitShelter.enterStack.storage[0]).toBe(2);
+    expect(actual).toBe('dog');
+    expect(exitShelter.enterStack.storage[0]).toBe('cat');
+    expect(exitShelter.enterStack.storage[2]).toBe('dog');
 
   });
 
@@ -94,7 +125,7 @@ xdescribe(`Test the dequeue method`, () => {
     const dequeueEmptyShelter = new AnimalShelter();
 
     const actual = dequeueEmptyShelter.dequeue();
-    expect(actual).toBe('EMPTY QUEUE');
+    expect(actual).toBe('No animals in the Shelter');
 
   });
 

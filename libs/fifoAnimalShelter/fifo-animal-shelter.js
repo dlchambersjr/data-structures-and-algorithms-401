@@ -58,26 +58,55 @@ class AnimalShelter {
 
   dequeue(preference) {
     let foundAnimal;
-    let exit = this.exitStack.storage;
-    let enter = this.enterStack.storage;
+    let exit = this.exitStack;
+    let enter = this.enterStack;
 
-    while (enter.length > 0) {
-      exit.push(enter.pop());
+    console.log(preference);
+    console.log(foundAnimal);
+    console.log(exit.storage);
+    console.log(enter);
+
+    while (enter.storage.length > 0) {
+      exit.storage.push(enter.storage.pop());
     }
 
-    while (exit.length > 0) {
+    console.log(exit.storage);
+
+    while (exit.storage.length > 0) {
+
+      console.log(exit.storage.length);
+
       if (!preference) {
-        foundAnimal = exit.pop();
+        foundAnimal = exit.storage.pop();
         preference = 'found';
       }
 
-      if (preference === 'cat') {
-        foundAnimal = exit.pop();
+      console.log(exit.storage);
+
+      if (preference === 'cat' && exit.peek() === 'cat') {
+        foundAnimal = exit.storage.pop();
         preference = 'found';
-      } else if (preference === 'dog') {
-        foundAnimal = exit.pop();
+
+        console.log(exit.storage);
+        console.log(foundAnimal);
+        console.log(preference);
+
+      }
+
+      console.log(exit.peek());
+
+      if (preference === 'dog' && exit.peek() === 'dog') {
+        foundAnimal = exit.storage.pop();
         preference = 'found';
-      } else enter.push(exit.pop);
+        console.log(exit.storage);
+        console.log(foundAnimal);
+        console.log(preference);
+
+      }
+
+      console.log(exit.storage);
+      enter.storage.push(exit.storage.pop());
+      console.log(enter.storage);
     }
 
     if (preference === 'found') {
