@@ -33,8 +33,10 @@ The following tests were performed:
 ### Queue.enqueue()
 * enqueue-1: add a value to the back of the queue when it's empty.
 * enqueue-2: add a value to the rear of the queue when there are already items in the queue.
-* enqueue-3: Return 'Please enter a value' when no value is entered.
+* enqueue-3: Return 'Please enter a Cat or Dog' when no value is entered.
 
 ### Queue.dequeue()
-* dequeue-1: Remove and return the value at the front of the queue.   
-* dequeue-2: Return EMPTY QUEUE when trying to remove a value when nothing is there.
+* dequeue-1: Remove and return the first cat in the queue when a cat is requested.   
+* dequeue-2: Remove and return the first dog in the queue when a dog is requested.   
+* dequeue-3: Remove and return the first animal in the queue when no preference is made.   
+* dequeue-5: Return 'No animals in the Shelter' when trying to remove an animal that is not there.

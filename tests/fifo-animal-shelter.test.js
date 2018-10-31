@@ -39,7 +39,7 @@ describe(`Test the enqueue method`, () => {
 
   });
 
-  it(`should add, remove,and add values and maintain the correct front value.`, () => {
+  it(`should add values and maintain the correct front value.`, () => {
 
     const addToShelter = new AnimalShelter();
     addToShelter.enqueue('dog-1');
