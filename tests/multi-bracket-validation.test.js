@@ -7,7 +7,7 @@ describe('Test to check for balanced brackets', () => {
   const odd = `{}([)`;
   const balanced = `{([])}`;
   const unbalanced = `({)}`;
-  const char = `([code fellows])`;
+  const char = `([code{f}ellows])`;
 
   it('should return false if there are an odd number of brackets', () => {
 
