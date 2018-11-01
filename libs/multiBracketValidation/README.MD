@@ -10,6 +10,9 @@ same as above
 ## Solution
 ![whiteboard](https://raw.githubusercontent.com/dlchambersjr/data-structures-and-algorithms/master/assets/multi-bracket-validation.jpg)
 
+## Approach & Efficiency
+### Big-O
+TIME/SPACE: O(n) - the same process will apply to the string whether it has a length of 10 or 1000 and we are adversely affecting resources.
 
 ## Function
 
