@@ -2,7 +2,7 @@ module.exports = function () {
 
   return {
 
-    files: ['libs/fifoAnimalShelter/**/*.js'],
+    files: ['libs/multibracketValidation/**/*.js'],
 
 
     tests: ['tests/**/*test.js'],
