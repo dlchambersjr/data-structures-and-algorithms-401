@@ -2,7 +2,7 @@ module.exports = function () {
 
   return {
 
-    files: ['libs/multibracketValidation/**/*.js'],
+    files: ['libs/**/*.js'],
 
 
     tests: ['tests/**/*test.js'],
