@@ -99,38 +99,34 @@ class BinarySearchTree {
 
     if (!value) { return 'VALUE REQUIRED'; }
     if (!this.root) return 'EMPTY TREE';
+    if (this.root.value === value) { return this.root; }
 
     let current = this.root;
-    console.log(current);
+    let foundNode = false;
 
-    console.log(current !== null && value !== current.value);
-    while (current && value !== current.value) {
+    console.log(current && !foundNode);
 
-      console.log(value < current.value);
-      if (value < current.value) {
+    // FIXME: I can't seem to get this to work right.  I feel like the code is right...
 
-        console.log(current.left);
-        if (current.left) {
+    // while (current && !foundNode) {
 
-          // current = current.left;
-          console.log(current.left.value === value);
-          if (current.left.value === value) {
-            return current.left;
+    //   console.log(current && !foundNode);
+    //   console.log(value, current.value);
 
-          } else { current = current.left; }
+    //   console.log(value < current.value);
 
-        } else {
-          console.log(current.right);
-          if (current.right) {
-            if (current.right.value === value) {
-              return current.right;
+    //   if (value < current.value) {
+    //     current = current.left;
+    //   }
+    //   else if (value > current.value); {
+    //     current = current.right;
+    //   } else {
+    //     foundNode = true;
+    //   }
 
-            } else current = current.right;
-          }
-        }
-      }
-    }
+    // }
 
+    if (!foundNode) { return 'VALUE NOT FOUND' }
     return current;
 
   } //end of search

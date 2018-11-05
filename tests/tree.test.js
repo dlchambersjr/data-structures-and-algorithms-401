@@ -248,9 +248,12 @@ describe('Test to search for a node value in a binarySearchTree', () => {
     leftValues.add(26);
     leftValues.add(28);
 
-    const actual = leftValues.search(28);
-    const expected = 28;
-    expect(actual.value).toEqual(expected);
+    console.log(leftValues);
+
+    const actual = leftValues.search(25);
+    const expected = new Node(50);
+
+    expect(actual.value).toBe(expected.value);
 
   });
 
