@@ -239,7 +239,7 @@ describe('Test to search for a node value in a binarySearchTree', () => {
 
   });
 
-  xit('should return the node of the requested value from the left when lower than the node.', () => {
+  it('should return the node of the requested value from the left when lower than the node.', () => {
 
     const leftValues = new BinarySearchTree();
     leftValues.add(50);
