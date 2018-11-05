@@ -23,14 +23,14 @@ End users should not be aware of any errors or overflows.
 * Returns the modified tree.
 
 ### Testing
-* PASSING: XXX% 
-* COVERAGE: XXX% coverage
+* PASSING: 100% 
+* COVERAGE: 96.43% coverage
 
 #### The following tests were performed:
 * Create a new instance of node.
 * Create a new instance of a Binary Tree
 * Return modified tree after calling fizzBuzzTree().
-* Return modified "sub-tree" when traversing from a child node in the tree.
+* Return modified tree after calling fizzBuzzTree() if the tree contains alpha characters.
 * Verify proper error handling when the tree is empty.
 
 

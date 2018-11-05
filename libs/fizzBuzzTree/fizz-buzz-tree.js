@@ -14,6 +14,22 @@ class BinaryTree {
     this.root = root;
   }
 
+  preOrder(node = this.root) {
+    const traversePre = (node, outputArray) => {
+      if (node) {
+        outputArray.push(node.value);
+        traversePre(node.left, outputArray);
+        traversePre(node.right, outputArray);
+      }
+      return outputArray;
+    };
+
+    if (!this.root) { return 'EMPTY TREE'; }
+    else { return traversePre(node, []); }
+
+  }//end of preOrder
+
+
   fizzBuzzTree(tree = this.root) {
 
     const traversePre = (node) => {
@@ -37,4 +53,5 @@ class BinaryTree {
 module.exports = {
   Node,
   BinaryTree,
+
 };
