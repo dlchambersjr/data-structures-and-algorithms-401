@@ -20,7 +20,7 @@ rootNode.right.right.left = new Node('H');
 // Assign nodes to a branch
 const binaryTreeData = new BinaryTree(rootNode);
 
-describe('Test to verify class creation', () => {
+xdescribe('Test to verify class creation', () => {
 
   it('should create a new instance of a node', () => {
 
@@ -45,7 +45,7 @@ describe('Test to verify class creation', () => {
 
 });
 
-describe('Test to verify preOrder method', () => {
+xdescribe('Test to verify preOrder method', () => {
 
   it('should return the values of the tree in preOrder format when traversing the tree from the root', () => {
 
@@ -77,7 +77,7 @@ describe('Test to verify preOrder method', () => {
 
 });
 
-describe('Test to verify inOrder methd', () => {
+xdescribe('Test to verify inOrder methd', () => {
 
   it('should return the values of the tree in inOrder format when traversing the tree from the root', () => {
 
@@ -109,7 +109,7 @@ describe('Test to verify inOrder methd', () => {
 
 });
 
-describe('Test to verify postOrder methd', () => {
+xdescribe('Test to verify postOrder methd', () => {
 
   it('should return the values of the tree in postOrder format when traversing the tree from the root', () => {
 
@@ -142,7 +142,7 @@ describe('Test to verify postOrder methd', () => {
 
 });
 
-describe('Test to add nodes to a Binary Search Tree when empty', () => {
+xdescribe('Test to add nodes to a Binary Search Tree when empty', () => {
 
   it('should return VALUE REQUIRED if no value is passed', () => {
 
@@ -217,7 +217,7 @@ describe('Test to add nodes to a Binary Search Tree when empty', () => {
 
 });
 
-describe('Test to search for a node value in a binarySearchTree', () => {
+xdescribe('Test to search for a node value in a binarySearchTree', () => {
 
   it('should return VALUE REQUIRED if no search value is passed', () => {
 
