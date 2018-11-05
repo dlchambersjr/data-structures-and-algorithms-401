@@ -239,7 +239,7 @@ xdescribe('Test to search for a node value in a binarySearchTree', () => {
 
   });
 
-  xit('should return the node of the requested value from the left when lower than the node.', () => {
+  it('should return the node of the requested value from the left when lower than the node.', () => {
 
     const leftValues = new BinarySearchTree();
     leftValues.add(50);
@@ -248,16 +248,14 @@ xdescribe('Test to search for a node value in a binarySearchTree', () => {
     leftValues.add(26);
     leftValues.add(28);
 
-    console.log(leftValues);
-
     const actual = leftValues.search(25);
-    const expected = new Node(50);
+    const expected = new Node(25);
 
     expect(actual.value).toBe(expected.value);
 
   });
 
-  xit('should return the node of the requested value from the right when higher than the node.', () => {
+  it('should return the node of the requested value from the right when higher than the node.', () => {
 
     const rightValues = new BinarySearchTree();
     rightValues.add(50);
@@ -272,6 +270,19 @@ xdescribe('Test to search for a node value in a binarySearchTree', () => {
 
   });
 
-  xit('should return VALUE NOT FOUND if the value is not in the tree.', () => { });
+  it('should return VALUE NOT FOUND if the value is not in the tree.', () => {
+
+    const rightValues = new BinarySearchTree();
+    rightValues.add(50);
+    rightValues.add(75);
+    rightValues.add(77);
+    rightValues.add(76);
+    rightValues.add(78);
+
+    const actual = rightValues.search(10);
+    const expected = 'VALUE NOT FOUND';
+    expect(actual).toBe(expected);
+
+  });
 
 });

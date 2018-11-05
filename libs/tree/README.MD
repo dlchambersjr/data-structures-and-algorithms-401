@@ -34,7 +34,7 @@ End users should not be aware of any errors or overflows.
 * Returns an array of the traversed values
 
 ### Binary Tree Testing
-ALL BINARY TREE TESTS PASS with 100%
+Tests pass 100% with 98.61%
 
 ####The following tests were performed:
 * Create a new instance of node.
@@ -50,12 +50,14 @@ ALL BINARY TREE TESTS PASS with 100%
 * Traverses the tree following the rules of less than/greater than the value of the node until the end point is found.
 * Add the value at the endpoint.
 
-### search(arity 1) - ```NEEDS MORE WORK... HELP PLEASE.```
+### search(arity 1) - 
 * Receives a value to search for in the tree.
 * Traverses the tree using value comparisons to direct the search left or right.
 * Returns the node with the correct value.
 
 ### Binary SEARCH Tree Testing
+Tests pass 100% with 98.61%
+
 Binary Search Tree method to add passes with 100%.
 Binary Search Tree method to search is still in progress and noter working.
 
