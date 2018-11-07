@@ -102,7 +102,6 @@ class BinaryTree {
 
   }//end of postOrder
 
-
   breadthFirst(node = this.root) {
     if (!node) { return 'EMPTY TREE'; }
 
@@ -123,6 +122,25 @@ class BinaryTree {
 
   }//end of breadthFirst
 
+  findMaximumValue(tree) {
+    if (!tree) { return 'EMPTY TREE'; }
+    let maxValue = tree.root.value;
+
+    function traversePre(node) {
+      if (node) {
+
+        if (node.value > maxValue) { maxValue = node.value; }
+
+        traversePre(node.left);
+        traversePre(node.right);
+      }
+      return;
+    }
+
+    traversePre(tree.root);
+    return maxValue;
+
+  }//end of findMaximumValue
 
 }//end of Binary tree class definition
 

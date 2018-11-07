@@ -178,6 +178,56 @@ describe('Test to verify breadthFirst methd', () => {
 
 });
 
+describe('Test to verify findMaximumValue method', () => {
+
+  //Create the root node
+  const nummericRootNode = new Node(1);
+
+  // Create the left branch
+  nummericRootNode.left = new Node(5);
+  nummericRootNode.left.left = new Node(9);
+  nummericRootNode.left.right = new Node(57);
+  nummericRootNode.left.right.left = new Node(199);
+  nummericRootNode.left.right.right = new Node(-10);
+
+  //Create the right branch
+  nummericRootNode.right = new Node(201);
+  nummericRootNode.right.right = new Node(6);
+  nummericRootNode.right.right.left = new Node(11);
+  nummericRootNode.right.right.left.left = new Node('A');
+
+  // Assign nodes to a branch
+  const numericBT = new BinaryTree(nummericRootNode);
+
+  it('should return the maximum value when traversing using a preOrder methodology', () => {
+
+    const actual = numericBT.findMaximumValue(numericBT);
+    const expected = 201;
+
+    expect(actual).toBe(expected);
+
+  });
+
+  it('should return the max value when the tree contains values that strings.', () => {
+
+    const actual = numericBT.findMaximumValue(numericBT);
+    const expected = 201;
+
+    expect(actual).toBe(expected);
+
+  });
+
+  it(`should return 'EMPTY TREE' when there are no nodes to traverse`, () => {
+    const emptyTree = new BinaryTree();
+    const actual = emptyTree.preOrder();
+    const expected = 'EMPTY TREE';
+
+    expect(actual).toEqual(expected);
+
+  });
+
+});
+
 
 // Binary Search Tree methods
 describe('Test to add nodes to a Binary Search Tree when empty', () => {
