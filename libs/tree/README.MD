@@ -1,3 +1,33 @@
+# CODE: Breadth-First Traversal
+Added to the existing Binary Tree class on 11.06.2018
+
+## Summary
+PD: Add a method to our existing Binary Tree class that will allow us to traverse the tree using the breadth-first methodology.  We should return the contents of each node in the order the nodes are traversed.
+
+## Challenge
+I will be incorporating my previously created Queue class to assist with the process.
+
+## Big O
+Time - O(n) because we don't know how many nodes are in the tree.
+
+Space - O(n) because we will be creating a queue and an array to hold the nth values
+
+## Solution
+![whiteboard](https://raw.githubusercontent.com/dlchambersjr/data-structures-and-algorithms/master/assets/breadth-first-traversal.jpg)
+
+## breadthFirst(arity 0/1) method
+* Receives an optional starting node in the tree. If no node is passed into the method, it will start with the root node.
+* Traverses the tree starting at the top and traveling LEFT -> RIGHT across each level until all nodes have been traversed.
+* Stores the value of each traversed node in an array
+* Returns the array as a string.
+
+## Tests
+All tests pass 100% with 95.38% coverage.
+* Test for an empty tree
+* Test for the proper node order to be returned
+* Test for the proper node order to be returned when passing in a "sub-tree" to the method.
+
+
 # CODE: Trees
 
 ## Summary

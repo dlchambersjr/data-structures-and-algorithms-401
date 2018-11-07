@@ -9,6 +9,49 @@ class Node {
 
 } //end of Node class defintition
 
+class Queue {
+  constructor() {
+    this.front = null;
+    this.storage = [];
+  }
+
+  // Add a value to the end of the Queue
+  enqueue(value) {
+    if (value) {
+      this.storage.unshift(new Node(value));
+      this.front = this.peek();
+      return this;
+    } else return 'Please enter a number';
+  }
+
+  // remove a value from the front of the Queue
+  dequeue() {
+
+    if (this.storage.length >= 2) {
+      this.front = this.storage[this.storage.length - 2];
+      return this.storage.pop();
+    }
+
+    if (this.storage.length === 1) {
+      this.front = null;
+      return this.storage.pop();
+    }
+    else { return 'EMPTY QUEUE'; }
+  }
+
+  // Look a the front of the Queue
+  peek() {
+    if (this.storage.length > 0) {
+      return this.storage[this.storage.length - 1];
+    } else {
+      this.front = null;
+      return 'EMPTY QUEUE';
+    }
+  }
+}
+
+
+
 class BinaryTree {
   constructor(root = null) {
     this.root = root;
@@ -58,6 +101,28 @@ class BinaryTree {
     else { return traversePost(node, []); }
 
   }//end of postOrder
+
+
+  breadthFirst(node = this.root) {
+    if (!node) { return 'EMPTY TREE'; }
+
+    const visitedQueue = new Queue();
+    const output = [];
+
+    visitedQueue.enqueue(node);
+
+    while (visitedQueue.storage.length > 0) {
+      node = visitedQueue.dequeue();
+
+      if (node.value.left) { visitedQueue.enqueue(node.value.left); }
+      if (node.value.right) { visitedQueue.enqueue(node.value.right); }
+
+      output.push(node.value.value);
+    }
+    return output.join(',');
+
+  }//end of breadthFirst
+
 
 }//end of Binary tree class definition
 
@@ -117,15 +182,15 @@ class BinarySearchTree {
 
     }
 
-    console.log(foundNode);
-
     if (!foundNode) { return 'VALUE NOT FOUND'; }
     else { return current; }
 
   } //end of search
 
-
 }//end of Binary Search tree class definition
+
+
+
 
 module.exports = {
   Node,
