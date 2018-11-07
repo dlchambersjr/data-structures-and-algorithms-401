@@ -1,3 +1,30 @@
+# CODE: Find Maximum Value
+Added to the existing Binary Tree class on 11.07.2018
+
+## Summary
+PD: Add a method to our existing Binary Tree class that will receive a tree and allow us to traverse and locate the maximum value in that tree.  We should return the maximum value.
+
+## Challenge
+I will create a modified version of the preOrder traversal method that will find the max value.
+
+## Big O
+* Time - O(n) because we don't know how many nodes are in the tree.
+* Space - O(1) because the resources do not grow after they are created.
+
+## Solution
+![whiteboard](https://raw.githubusercontent.com/dlchambersjr/data-structures-and-algorithms/master/assets/find-maximum-value-binary-tree.jpg)
+
+## findMaximumValue(arity 1) method
+* Receives a tree to search.
+* Traverse the tree using preOrder methodology.
+* Compares the value of the each node with the maxValue and changes maxValue if necessary.
+
+## Tests
+All tests pass 100% with 94.69% coverage.
+* Test for empty tree
+* Test for popper value returned
+* Test for max value when there are string values in the tree
+
 # CODE: Breadth-First Traversal
 Added to the existing Binary Tree class on 11.06.2018
 
