@@ -20,7 +20,7 @@ rootNode.right.right.left = new Node('H');
 // Assign nodes to a branch
 const binaryTreeData = new BinaryTree(rootNode);
 
-xdescribe('Test to verify class creation', () => {
+describe('Test to verify class creation', () => {
 
   it('should create a new instance of a node', () => {
 
@@ -45,7 +45,9 @@ xdescribe('Test to verify class creation', () => {
 
 });
 
-xdescribe('Test to verify preOrder method', () => {
+
+// Binary Tree Methods
+describe('Test to verify preOrder method', () => {
 
   it('should return the values of the tree in preOrder format when traversing the tree from the root', () => {
 
@@ -77,7 +79,7 @@ xdescribe('Test to verify preOrder method', () => {
 
 });
 
-xdescribe('Test to verify inOrder methd', () => {
+describe('Test to verify inOrder methd', () => {
 
   it('should return the values of the tree in inOrder format when traversing the tree from the root', () => {
 
@@ -109,7 +111,7 @@ xdescribe('Test to verify inOrder methd', () => {
 
 });
 
-xdescribe('Test to verify postOrder methd', () => {
+describe('Test to verify postOrder methd', () => {
 
   it('should return the values of the tree in postOrder format when traversing the tree from the root', () => {
 
@@ -120,7 +122,7 @@ xdescribe('Test to verify postOrder methd', () => {
 
   });
 
-  it('should return the values of the tree in inOrder format when traversing from a passed in node', () => {
+  it('should return the values of the tree in postOrder format when traversing from a passed in node', () => {
 
     const subNodeStart = rootNode.left.right;
     const actual = binaryTreeData.postOrder(subNodeStart);
@@ -142,7 +144,43 @@ xdescribe('Test to verify postOrder methd', () => {
 
 });
 
-xdescribe('Test to add nodes to a Binary Search Tree when empty', () => {
+describe('Test to verify breadthFirst methd', () => {
+
+  it('should return the values of the tree in breadthFirst format when traversing the tree from the root', () => {
+
+    const actual = binaryTreeData.breadthFirst();
+
+    const expected = 'F,B,G,A,D,I,C,E,H';
+
+    expect(actual).toBe(expected);
+
+  });
+
+  it('should return the values of the tree in breadthFirst format when traversing from a passed in node', () => {
+
+    const subNodeStart = rootNode.left.right;
+    const actual = binaryTreeData.breadthFirst(subNodeStart);
+    const expected = 'D,C,E';
+
+    expect(actual).toEqual(expected);
+
+  });
+
+
+  it(`should return 'EMPTY TREE' when there are no nodes to traverse`, () => {
+    const emptyTree = new BinaryTree();
+    const actual = emptyTree.breadthFirst();
+    const expected = 'EMPTY TREE';
+
+    expect(actual).toEqual(expected);
+
+  });
+
+});
+
+
+// Binary Search Tree methods
+describe('Test to add nodes to a Binary Search Tree when empty', () => {
 
   it('should return VALUE REQUIRED if no value is passed', () => {
 
@@ -217,7 +255,7 @@ xdescribe('Test to add nodes to a Binary Search Tree when empty', () => {
 
 });
 
-xdescribe('Test to search for a node value in a binarySearchTree', () => {
+describe('Test to search for a node value in a binarySearchTree', () => {
 
   it('should return VALUE REQUIRED if no search value is passed', () => {
 
@@ -286,3 +324,7 @@ xdescribe('Test to search for a node value in a binarySearchTree', () => {
   });
 
 });
+
+
+
+
