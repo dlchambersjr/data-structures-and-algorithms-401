@@ -1,0 +1,18 @@
+'use strict';
+
+import LinkedList from '../finished-challenges/linked-list/linked-list.js';
+
+
+const findDuplicateWord = (words = null) => {
+
+  if (!words) { return 'A string is required'; }
+
+  const wordTracker = new LinkedList();
+  let word = '';
+  let found = false;
+
+
+
+};
+
+export default findDuplicateWord;
