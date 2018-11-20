@@ -1,0 +1,30 @@
+'use strict';
+
+import findDuplicateWord from '../repeatedWord/repeated-word.js';
+
+const noWords = '';
+
+const stringOfWords = 'It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only...';
+
+const mixedCase = 'The rain in Spain falls mainly on the plains.';
+
+describe('Check for the first duplicate word', () => {
+
+  it('should return an error message if a string is not passed', () => {
+
+    const actual = findDuplicateWord();
+    const expected = 'A string is requiredXXX';
+
+    expect(actual).toBe(expected);
+
+
+  });
+
+  it('should return no words present if the the string is empty', () => { });
+
+  it('should return the first duplicated word', () => { });
+
+  it('should return the first duplicated word regardless of case', () => { });
+
+});
+

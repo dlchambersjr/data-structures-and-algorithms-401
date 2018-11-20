@@ -2,10 +2,13 @@ module.exports = function () {
 
   return {
 
-    files: ['**/*.js'],
+    files: [
+      '/**/*.js',
+      { pattern: './**/*test.js', ignore: true },
+    ],
 
 
-    tests: ['tests/**/*test.js'],
+    tests: ['./**/*test.js'],
 
     env: {
 
