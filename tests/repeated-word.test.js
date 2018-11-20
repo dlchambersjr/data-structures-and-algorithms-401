@@ -1,6 +1,6 @@
 'use strict';
 
-import findDuplicateWord from '../repeatedWord/repeated-word.js';
+const findDuplicateWord = require('./repeated-word.js');
 
 const noWords = '';
 

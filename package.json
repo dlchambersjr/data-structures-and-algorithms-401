@@ -5,7 +5,7 @@
   "main": "''",
   "scripts": {
     "test": "jest --verbose ",
-    "watch": "jest --watchAll"
+    "watch": "jest --verbose --watchAll"
   },
   "repository": {
     "type": "git",
