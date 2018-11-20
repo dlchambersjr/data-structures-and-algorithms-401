@@ -1,6 +1,6 @@
 'use strict';
 
-const binarySearch = require('./array-binary-search');
+const binarySearch = require('../finished-challenges/array-binary-search');
 
 describe('Test the binarySearch function', () => {
 
