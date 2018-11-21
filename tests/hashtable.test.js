@@ -51,13 +51,10 @@ describe('Test hashTable find method', () => {
 
   it('should return the keyand value from the hash map', () => {
 
-
     let findHash = new HashMap(25);
 
     findHash.add('David', 'Dad');
     findHash.add('Lisa', 'Mom');
-
-
 
     const actual = findHash.find('David');
 
@@ -77,12 +74,14 @@ describe('Test hashTable find method', () => {
 
   xit('should return a message if key is not present', () => {
 
-    let addHash = new HashMap(25);
-    addHash.add('David', 'Dad');
+    let findHash = new HashMap(25);
 
-    const actual = addHash.add(null, 'Dad');
+    findHash.add('David', 'Dad');
+    findHash.add('Lisa', 'Mom');
 
-    expect(actual).toBe('Key/Value Required');
+    const actual = findHash.find('Joshua');
+
+    expect(actual).toBe('Key not Found');
   });
 
 });
