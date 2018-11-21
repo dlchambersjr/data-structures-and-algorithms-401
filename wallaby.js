@@ -3,7 +3,7 @@ module.exports = function () {
   return {
 
     files: [
-      '/**/*.js',
+      'new-challenges/**/*.js',
       { pattern: './**/*test.js', ignore: true },
     ],
 
