@@ -101,7 +101,7 @@ describe('Test hashTable contains method', () => {
   it('should return FALSE if the key DOES NOT exist', () => {
 
     let findHash = new HashMap(25);
-   
+
     findHash.add('David', 'Dad');
 
     const actual = findHash.contains('Lisa');
