@@ -24,7 +24,6 @@ class HashMap {
   add(key, value) {
     if (!key || !value) { return 'Key/Value Required'; }
     let index = this.hash(key);
-    console.log(index, key, value);
 
     if (!this.map[index]) { this.map[index] = []; }
 
@@ -32,11 +31,6 @@ class HashMap {
 
   }
 
-  getHash(key) {
-    if (!key) { return 'Key Required'; }
-    let index = this.hash(key);
-    return index;
-  }
 
   find(key) {
     if (!key) { return 'Key Required'; }
@@ -54,12 +48,28 @@ class HashMap {
 
   }
 
+  contains(key) {
+    if (!key) { return 'Key Required'; }
 
+    let index = this.hash(key);
+    let found;
 
+    if (this.map[index]) {
+      found = this.map[index].find(contents => Object.keys(contents) == key);
+    }
 
-  // update(key, newValue) {
+    if (found) { return true; };
 
-  // };
+    return false;
+
+  }
+
+  getHash(key) {
+    if (!key) { return 'Key Required'; }
+    let index = this.hash(key);
+    return index;
+  }
+
 
 
 }

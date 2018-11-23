@@ -58,9 +58,7 @@ describe('Test hashTable find method', () => {
 
     const actual = findHash.find('David');
 
-    console.log(actual);
-
-    expect(actual).toBe();
+    expect(actual).toBe('Dad');
   });
 
   it('should require a key to be passed', () => {
@@ -72,14 +70,14 @@ describe('Test hashTable find method', () => {
     expect(actual).toBe('Key Required');
   });
 
-  xit('should return a message if key is not present', () => {
+  it('should return a message if key is not present', () => {
 
     let findHash = new HashMap(25);
 
     findHash.add('David', 'Dad');
     findHash.add('Lisa', 'Mom');
 
-    const actual = findHash.find('Joshua');
+    const actual = findHash.find('Josh');
 
     expect(actual).toBe('Key not Found');
   });
@@ -88,47 +86,44 @@ describe('Test hashTable find method', () => {
 
 describe('Test hashTable contains method', () => {
 
-  xit('should return TRUE if the key exists', () => {
+  it('should return TRUE if the key exists', () => {
 
+    let containsHash = new HashMap(25);
 
-    let findHash = new HashMap(25);
-    const key = 'David';
-    findHash.add(key, 'Dad');
+    containsHash.add('David', 'Dad');
+    containsHash.add('Lisa', 'Mom');
 
-    const actual = findHash.find(key);
+    const actual = containsHash.contains('Lisa');
 
-    console.log(actual);
-
-    expect(actual.key).toBeDefined();
+    expect(actual).toBeTruthy();
   });
 
-  xit('should return FALSE if the key exists', () => {
-
+  it('should return FALSE if the key DOES NOT exist', () => {
 
     let findHash = new HashMap(25);
-    const key = 'David';
-    findHash.add(key, 'Dad');
+   
+    findHash.add('David', 'Dad');
 
-    const actual = findHash.find(key);
+    const actual = findHash.contains('Lisa');
 
-    console.log(actual);
-
-    expect(actual.key).toBeDefined();
+    expect(actual).toBeFalsy();
   });
 
-  xit('should return a message if key is not present', () => {
+  it('should require a key to be passed', () => {
 
-    let addHash = new HashMap(25);
-    addHash.add('David', 'Dad');
+    let containsHash = new HashMap(25);
 
-    const actual = addHash.add(null, 'Dad');
+    containsHash.add('David', 'Dad');
+    containsHash.add('Lisa', 'Mom');
 
-    expect(actual).toBe('Key/Value Required');
+    const actual = containsHash.contains();
+
+    expect(actual).toBe('Key Required');
   });
 
 });
 
-describe('Test hashTable GerHash method', () => {
+describe('Test hashTable GetHash method', () => {
 
   it('should return the hash of the key', () => {
 
@@ -137,8 +132,6 @@ describe('Test hashTable GerHash method', () => {
     const key = 'David';
 
     const actual = getHash.getHash(key);
-
-    console.log(actual);
 
     expect(actual).toBe(8);
   });
