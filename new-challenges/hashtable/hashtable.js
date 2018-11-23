@@ -24,11 +24,43 @@ class HashMap {
   add(key, value) {
     if (!key || !value) { return 'Key/Value Required'; }
     let index = this.hash(key);
-    console.log(index, key, value);
 
     if (!this.map[index]) { this.map[index] = []; }
 
     this.map[index].push({ [key]: value });
+
+  }
+
+
+  find(key) {
+    if (!key) { return 'Key Required'; }
+
+    let index = this.hash(key);
+    let found;
+
+    if (this.map[index]) {
+      found = this.map[index].find(contents => Object.keys(contents) == key);
+    }
+
+    if (found) { return found[key]; };
+
+    return 'Key not Found';
+
+  }
+
+  contains(key) {
+    if (!key) { return 'Key Required'; }
+
+    let index = this.hash(key);
+    let found;
+
+    if (this.map[index]) {
+      found = this.map[index].find(contents => Object.keys(contents) == key);
+    }
+
+    if (found) { return true; };
+
+    return false;
 
   }
 
@@ -38,38 +70,6 @@ class HashMap {
     return index;
   }
 
-  find(key) {
-    if (!key) { return 'Key Required'; }
-
-    let index = this.hash(key);
-
-    console.log(key);
-    console.log(index);
-
-    console.log(this.map[index].length);
-
-    console.log(this.map[index]);
-
-    console.log(this.map[index][0]);
-    console.log(this.map[index][0][key]);
-
-    if (this.map[index]) {
-      for (let i = 0; i < this.map[index].length; i++) {
-        console.log(this.map[index][i]);
-        if (this.map[index][i] === key) {
-          return this.map[index][i];
-        }
-      }
-      return 'Key not Found';
-    }
-
-
-  }
-
-
-  update(key, newValue) {
-
-  }
 
 
 }

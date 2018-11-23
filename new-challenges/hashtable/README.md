@@ -9,7 +9,7 @@ Problem Domain:  Create a hash map data structure that includes methods to `add(
 ## Methods
 
 ### hash(arity 1)
-* Used to create an index postion
+* Used to create an index position
 * Receives a key to hash
 * Returns a hashed value to use as an index position.
 
@@ -30,9 +30,17 @@ Problem Domain:  Create a hash map data structure that includes methods to `add(
 ### getHash(arity 1)
 * Used to get the index value of a particular key.
 * Receives a key to check.
-* Returns the hashed index positon.
+* Returns the hashed index position.
 
 ## Testing
+Tests passed with 100% coverage:
+* Tested the creation of a new hash map class.
+* Tested that all methods caught errors and returned conversational results.
+* Tested that all methods received proper input.
+* Tested ability to add a value to a hash table.
+* Tested ability to find a key and return the value.
+* Tested ability to see if a key was contained in the hash table.
+* Tested ability to return the hashed index of a key.
 
 
 
