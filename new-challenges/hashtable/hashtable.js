@@ -42,7 +42,7 @@ class HashMap {
       found = this.map[index].find(contents => Object.keys(contents) == key);
     }
 
-    if (found) { return found[key]; };
+    if (found) { return found[key]; }
 
     return 'Key not Found';
 
@@ -58,7 +58,7 @@ class HashMap {
       found = this.map[index].find(contents => Object.keys(contents) == key);
     }
 
-    if (found) { return true; };
+    if (found) { return true; }
 
     return false;
 
@@ -70,7 +70,20 @@ class HashMap {
     return index;
   }
 
+  serialize() {
 
+    console.log(this);
+    console.log(this.map);
+    console.log(this.map[0]);
+    console.log(this.map[8]);
+
+    return 'Empty Hash Map';
+
+  }
+
+  deserialize() {
+
+  }
 
 }
 

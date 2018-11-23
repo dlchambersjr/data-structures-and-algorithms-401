@@ -147,3 +147,41 @@ describe('Test hashTable GetHash method', () => {
 
 });
 
+describe('Test hashTable serialize method', () => {
+
+  it('should return the hash map as serialized data', () => {
+
+    let serialHash = new HashMap(25);
+    serialHash.add('David', 'Dad');
+    serialHash.add('Lisa', 'Mom');
+    serialHash.add('Carolynn', 'Daughter');
+
+    const actual = serialHash.map[18];
+
+    expect(actual).toBeDefined();
+  });
+
+  it('should require a specific key/value pair as serialized data', () => {
+
+    let serialHash = new HashMap(25);
+
+
+    const actual = serialHash.add('David', null);
+
+    expect(actual).toBe('Key/Value Required');
+  });
+
+  it('should throw a plain language error if hash map is empty', () => {
+
+    let serialHash = new HashMap(25);
+    serialHash.add('David', 'Dad');
+    serialHash.add('Lisa', 'Mom');
+    serialHash.add('Carolynn', 'Daughter');
+    const actual = serialHash.serialize();
+
+    expect(actual).toBe('Empty Hash Map');
+  });
+
+});
+
+
