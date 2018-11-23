@@ -42,34 +42,24 @@ class HashMap {
     if (!key) { return 'Key Required'; }
 
     let index = this.hash(key);
-
-    console.log(key);
-    console.log(index);
-
-    console.log(this.map[index].length);
-
-    console.log(this.map[index]);
-
-    console.log(this.map[index][0]);
-    console.log(this.map[index][0][key]);
+    let found;
 
     if (this.map[index]) {
-      for (let i = 0; i < this.map[index].length; i++) {
-        console.log(this.map[index][i]);
-        if (this.map[index][i] === key) {
-          return this.map[index][i];
-        }
-      }
-      return 'Key not Found';
+      found = this.map[index].find(contents => Object.keys(contents) == key);
     }
 
+    if (found) { return found[key]; };
+
+    return 'Key not Found';
 
   }
 
 
-  update(key, newValue) {
 
-  }
+
+  // update(key, newValue) {
+
+  // };
 
 
 }
