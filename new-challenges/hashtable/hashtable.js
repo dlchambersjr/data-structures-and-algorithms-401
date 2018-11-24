@@ -42,7 +42,7 @@ class HashMap {
       found = this.map[index].find(contents => Object.keys(contents) == key);
     }
 
-    if (found) { return found[key]; };
+    if (found) { return found[key]; }
 
     return 'Key not Found';
 
@@ -58,7 +58,7 @@ class HashMap {
       found = this.map[index].find(contents => Object.keys(contents) == key);
     }
 
-    if (found) { return true; };
+    if (found) { return true; }
 
     return false;
 
@@ -70,10 +70,39 @@ class HashMap {
     return index;
   }
 
+  serialize() {
+    let output = [];
 
+    for (let i = 0; i < this.map.length; i++) {
+      if (this.map[i]) {
+        output = output.concat(this.map[i]);
+      }
+    }
+
+    if (output.length) {
+      return JSON.stringify(output);
+    } else { return 'Empty Hash Table'; }
+
+  }
+
+  deserialize(input) {
+
+    if (!input) { return 'Key Required'; }
+
+    try {
+      const convertInput = JSON.parse(input);
+
+      for (let i = 0; i < convertInput.length; i++) {
+        let key = Object.keys(convertInput[i]);
+        this.add(key[0], convertInput[i][key]);
+      }
+
+      return this;
+
+    } catch (error) { return 'Not Valid JOSN'; }
+
+  }
 
 }
-
-
 
 module.exports = HashMap;
