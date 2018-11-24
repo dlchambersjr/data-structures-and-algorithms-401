@@ -71,22 +71,38 @@ class HashMap {
   }
 
   serialize() {
+    let output = [];
 
-    console.log(this);
-    console.log(this.map);
-    console.log(this.map[0]);
-    console.log(this.map[8]);
+    for (let i = 0; i < this.map.length; i++) {
+      if (this.map[i]) {
+        output = output.concat(this.map[i]);
+      }
+    }
 
-    return 'Empty Hash Map';
+    if (output.length) {
+      return JSON.stringify(output);
+    } else { return 'Empty Hash Table'; }
 
   }
 
-  deserialize() {
+  deserialize(input) {
+
+    if (!input) { return 'Key Required'; }
+
+    try {
+      const convertInput = JSON.parse(input);
+
+      for (let i = 0; i < convertInput.length; i++) {
+        let key = Object.keys(convertInput[i]);
+        this.add(key[0], convertInput[i][key]);
+      }
+
+      return this;
+
+    } catch (error) { return 'Not Valid JOSN'; }
 
   }
 
 }
-
-
 
 module.exports = HashMap;

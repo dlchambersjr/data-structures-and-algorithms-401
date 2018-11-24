@@ -155,31 +155,55 @@ describe('Test hashTable serialize method', () => {
     serialHash.add('David', 'Dad');
     serialHash.add('Lisa', 'Mom');
     serialHash.add('Carolynn', 'Daughter');
+    const actual = serialHash.serialize();
 
-    const actual = serialHash.map[18];
+    expect(actual).toContain('[{"David":"Dad"},{"Lisa":"Mom"},{"Carolynn":"Daughter"}]');
 
-    expect(actual).toBeDefined();
-  });
-
-  it('should require a specific key/value pair as serialized data', () => {
-
-    let serialHash = new HashMap(25);
-
-
-    const actual = serialHash.add('David', null);
-
-    expect(actual).toBe('Key/Value Required');
   });
 
   it('should throw a plain language error if hash map is empty', () => {
 
     let serialHash = new HashMap(25);
-    serialHash.add('David', 'Dad');
-    serialHash.add('Lisa', 'Mom');
-    serialHash.add('Carolynn', 'Daughter');
+
     const actual = serialHash.serialize();
 
-    expect(actual).toBe('Empty Hash Map');
+    expect(actual).toContain('Empty Hash Table');
+  });
+
+});
+
+describe('Test hashTable deserialize method', () => {
+
+  it('should take a json string and place it in the hash table', () => {
+
+    let populateHash = new HashMap(25);
+
+    const inputJSON = '[{"David":"Dad"},{"Lisa":"Mom"},{"Carolynn":"Daughter"}]';
+
+    const actual = populateHash.deserialize(inputJSON);
+
+    expect(actual.map[18]).toBeDefined();
+
+  });
+
+  it('should return a plain language error if no string is passed', () => {
+
+    let populateHash = new HashMap(25);
+
+    const actual = populateHash.deserialize();
+
+    expect(actual).toBe('Key Required');
+
+  });
+
+  it('should return a plain language error if bad JSON is passed in', () => {
+
+    let populateHash = new HashMap(25);
+
+    const actual = populateHash.deserialize('Bad JSON String');
+
+    expect(actual).toBe('Not Valid JOSN');
+
   });
 
 });
