@@ -12,8 +12,6 @@ const findDuplicateWord = (words = null) => {
   let found = false;
 
 
-
-
 };
 
 export default findDuplicateWord;
