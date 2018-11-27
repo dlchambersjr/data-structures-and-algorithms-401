@@ -10,6 +10,10 @@ const HashMap = require('../hashtable/hashtable.js');
 
 const treeIntersection = (treeA, treeB) => {
 
+  if (!treeA || !treeB) { return 'Tree REQUIRED'; }
+
+  if (!treeA.root || !treeB.root) { return 'Tree CANNOT be empty'; }
+
   const findIntersection = new HashMap(50);
   const outputArray = [];
 
