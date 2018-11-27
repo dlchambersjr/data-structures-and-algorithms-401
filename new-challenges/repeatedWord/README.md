@@ -4,7 +4,7 @@
 Problem Domain:  Create a function that receives a string and returns the first repeated word in the string.  It return 'No duplicate words' if no duplicates are found.
 
 ## Challenge
-Uses the hash map class (in)
+Uses the hash map class)
 
 ## functions
 
