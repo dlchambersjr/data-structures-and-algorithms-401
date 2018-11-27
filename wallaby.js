@@ -1,14 +1,14 @@
-module.exports = function (wallaby) {
-
-  // add any needed environment variables here
-  process.env.PORT = 3000;
-  process.env.APP_SECRET = 'SecretCodeForTests';
+module.exports = function () {
 
   return {
 
-    files: ['new-challenges/**/*.js'],
+    files: [
+      'new-challenges/**/*.js',
+      { pattern: './**/*test.js', ignore: true },
+    ],
 
-    tests: ['tests/**/*.test.js'],
+
+    tests: ['./**/*test.js'],
 
     env: {
 
@@ -25,15 +25,6 @@ module.exports = function (wallaby) {
     },
 
     testFramework: 'jest',
-
-    compilers: {
-      '**/*.js': wallaby.compilers.babel(),
-    },
-
-    setup: function () {
-      // require('dotenv').config();
-      require('babel-core');
-    },
 
   };
 
