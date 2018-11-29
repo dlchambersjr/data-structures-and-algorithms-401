@@ -8,7 +8,7 @@ module.exports = function () {
     ],
 
 
-    tests: ['./**/*test.js'],
+    tests: ['tests/**/*test.js'],
 
     env: {
 
