@@ -18,7 +18,7 @@ Tests passed with 100% coverage:
 * Tested that the hashmaps passed to the function are not empty.
 * Tested that the hasmaps combine correctly.
 
-![Whiteboard](https://raw.githubusercontent.com/dlchambersjr/data-structures-and-algorithms/master/assets/join-left.jpg)
+![Whiteboard](https://raw.githubusercontent.com/dlchambersjr/data-structures-and-algorithms/master/assets/left-join.jpg)
 
 
 
