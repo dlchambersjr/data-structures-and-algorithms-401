@@ -8,58 +8,45 @@ See above
 
 ## Classes
 ### `Vertex(arity 1)`
-Receives a value to be stored in the Vertex(node) of the graph.
+Receives a value to be stored in a Vertex(node).
+
 ### `Edge(arity 2)`
 Receives a vertex to connect to and the weight of the edge between the two vertices.  weight defaults to 1 if not provided.
+
 ### `Graph()`
 Creates an adjacencyList map to store the vertices included in the graph.
 
 ## Methods
 
-### hash(arity 1)
-* Used to create an index position
-* Receives a key to hash
-* Returns a hashed value to use as an index position.
+### `addVertex(arity 1)`
+* Used to add a vertex into the graph
+* Receives a vertex to add
+* Returns the graph with the newly added vertex.
 
-### add(arity 2)
-* Used to add key/value pair into the hash map.
-* It will receive a key and value to be added.
+### `addDirectedEdge(arity 3)`
+* Used to create an edge between two vertex in the graph.
+* Receives the starting and ending vertex along with the weight of the edge.
 
-### Find(arity 1)
-* Used to find a particular value in hash table.
-* It will receive a key to be searched for.
-* it will return the value from the key value pair.
+### `getNodes()`
+* Used to identify all of the vertex's in the graph.
+* Returns an array of all of the vertices.
 
-### contains(arity 1)
-* Used to check if the key is contained in the hash table.
-* Receives a key to check.
-* Returns a boolean result.
+### getNeighbors(arity 1)
+* Used to identify all of the connected vertice to a specific vertex.
+* Receives a vertex to use as the vertex to check
+* Returns an array of vertice connected to the given vertex.
 
-### getHash(arity 1)
-* Used to get the index value of a particular key.
-* Receives a key to check.
-* Returns the hashed index position.
-
-### serialize(arity 0)
-* Used to convert a hash table into serialized JSON data.
-* Returns the serialized data.
-
-### deserialize(arity 1)
-* Used to populate a hash map with serialized JSON data.
-* Receives a valid JSON string.
-* Returns the newly populated hash table.
+### `getSize()`
+* Used to determine how many vertice are in the graph.
+* Returns number of vertices.
 
 ## Testing
-Tests passed with 100% coverage:
-* Tested the creation of a new hash map class.
+**Tests passed with 100% coverage:**
+* Tested the creation of a new Vertex, Edge, and Graph classes.
 * Tested that all methods caught errors and returned conversational results.
 * Tested that all methods received proper input.
-* Tested ability to add a value to a hash table.
-* Tested ability to find a key and return the value.
-* Tested ability to see if a key was contained in the hash table.
-* Tested ability to return the hashed index of a key.
-* Tested the ability to return a serialized hashed table
-* Tested the ability to populate a hash table with a serialized JSON data.
-
-
-
+* Tested ability to add a vertex to the graph.
+* Tested ability to make a directed edge between two vertice.
+* Tested ability to see all of the vertices included in the graph
+* Tested ability to see the vertices with a direct edge to a specific vertex.
+* Tested the ability identify the number of vertice in the graph.
