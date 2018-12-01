@@ -59,7 +59,7 @@ class Graph {
     const nodes = this._adjacencyList.get(vertex).entries();
 
     for (let [key, value] of nodes) {
-      connectedNodes.push(value.vertex);
+      connectedNodes.push([value.vertex, value.weight]);
     }
 
     return connectedNodes;

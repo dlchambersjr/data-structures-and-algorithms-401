@@ -174,7 +174,7 @@ describe('getNeighbors() tests', () => {
     neighbors.addDirectedEdge(ten, six);
 
     const actual = neighbors.getNeighbors(ten);
-    const expected = [three, six];
+    const expected = [[three, 1], [six, 1]];
 
     expect(actual).toEqual(expected);
 
