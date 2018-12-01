@@ -31,10 +31,10 @@ Creates an adjacencyList map to store the vertices included in the graph.
 * Used to identify all of the vertex's in the graph.
 * Returns an array of all of the vertices.
 
-### getNeighbors(arity 1)
+### `getNeighbors(arity 1)`
 * Used to identify all of the connected vertice to a specific vertex.
 * Receives a vertex to use as the vertex to check
-* Returns an array of vertice connected to the given vertex.
+* Returns an array of vertice and their weight connected to the given vertex.
 
 ### `getSize()`
 * Used to determine how many vertice are in the graph.
