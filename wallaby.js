@@ -3,12 +3,12 @@ module.exports = function () {
   return {
 
     files: [
-      'new-challenges/**/*.js',
+      'graph/**/*.js',
       { pattern: './**/*test.js', ignore: true },
     ],
 
 
-    tests: ['tests/**/*test.js'],
+    tests: ['__tests__/**/*test.js'],
 
     env: {
 
