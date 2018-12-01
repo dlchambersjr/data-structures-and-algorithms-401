@@ -1,7 +1,5 @@
 'use strict';
 
-const util = require('util');
-
 class Vertex {
   constructor(value) {
     this.value = value;
@@ -9,7 +7,7 @@ class Vertex {
 }
 
 class Edge {
-  constructor(vertex, weight) {
+  constructor(vertex, weight = 1) {
     this.vertex = vertex;
     this.weight = weight;
   }
@@ -34,24 +32,37 @@ class Graph {
 
     if (!this._adjacencyList.has(endVertex)) return 'ending vertex not in the graph';
 
-    const sourceVertex = this._adjacencyList.get(startVertex);
+    const beginVertex = this._adjacencyList.get(startVertex);
 
-    sourceVertex.push(new Edge(endVertex, weight));
+    beginVertex.push(new Edge(endVertex, weight));
 
     return this;
-
-
 
   }//end addDirectedEdge
 
   getNodes() {
+    if (this._adjacencyList.size === 0) return 'Empty Graph';
+
+    const allNodes = [];
+    const mapGraph = this._adjacencyList.entries();
+
+    for (let [key] of mapGraph) { allNodes.push(key); }
+
+    return allNodes;
 
   } //End of getNodes();
 
   getNeighbors(vertex) {
     if (!vertex) return 'Vertex Required';
 
-    return [...this._adjacencyList.get(vertex)]
+    const connectedNodes = [];
+    const nodes = this._adjacencyList.get(vertex).entries();
+
+    for (let [key, value] of nodes) {
+      connectedNodes.push(value.vertex);
+    }
+
+    return connectedNodes;
 
   }//endGetNeighbors
 
@@ -60,10 +71,6 @@ class Graph {
     return this._adjacencyList.size;
 
   }// end get size
-
-  breadthFirstSearch(startnode) { }// end BFS
-
-  depthFirstSearch(startNode) { } //end DFS
 
 } // end Graph class
 

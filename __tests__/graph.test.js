@@ -49,7 +49,6 @@ describe('Vertex, Edge, and Graph tests', () => {
 
     const actual = new Graph();
     expect(actual).toBeDefined();
-    console.log(actual);
 
   });
 
@@ -127,6 +126,25 @@ describe('addDirectedEdge() tests', () => {
 
 describe('getNodes() tests', () => {
 
+  it('will return EMPTY if no contents in graph', () => {
+
+    const emptyGraph = new Graph();
+
+    const actual = emptyGraph.getNodes();
+    const expected = 'Empty Graph';
+
+    expect(actual).toBe(expected);
+
+  });
+
+  it('will return the nodes in the graph', () => {
+
+    const actual = graph.getNodes();
+    const expected = [ten, two, six, seven, three, eight];
+
+    expect(actual).toEqual(expected);
+
+  });
 
 });
 
@@ -146,7 +164,7 @@ describe('getNeighbors() tests', () => {
 
   });
 
-  it('will return Vertex Required if no vertex passed', () => {
+  it('will return a list of connected nodes to the provided passed', () => {
 
     const neighbors = new Graph();
     neighbors.addVertex(ten);
@@ -155,8 +173,8 @@ describe('getNeighbors() tests', () => {
     neighbors.addDirectedEdge(ten, three);
     neighbors.addDirectedEdge(ten, six);
 
-    const actual = neighbors.getNeighbors(ten).length;
-    const expected = 2;
+    const actual = neighbors.getNeighbors(ten);
+    const expected = [three, six];
 
     expect(actual).toEqual(expected);
 
@@ -181,9 +199,3 @@ describe('getSize() tests', () => {
   });
 
 });
-
-xdescribe('breadthFirstSearch() tests', () => { });
-
-xdescribe('depthFirstSearch() tests', () => { });
-
-
