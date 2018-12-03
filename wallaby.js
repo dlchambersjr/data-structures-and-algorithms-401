@@ -3,7 +3,7 @@ module.exports = function () {
   return {
 
     files: [
-      'graph/**/*.js',
+      'breadthFirst/**/*.js',
       { pattern: './**/*test.js', ignore: true },
     ],
 
