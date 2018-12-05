@@ -40,6 +40,27 @@ class Graph {
 
   }//end addDirectedEdge
 
+  addUnDirectedEdge(startVertex, endVertex, weight = 1) {
+    if (!startVertex || !endVertex) return 'Beginning AND ending vertice required';
+
+    if (!this._adjacencyList.has(startVertex)) return 'begining vertex not in the graph';
+
+    if (!this._adjacencyList.has(endVertex)) return 'ending vertex not in the graph';
+
+    const beginVertex = this._adjacencyList.get(startVertex);
+
+    beginVertex.push(new Edge(endVertex, weight));
+
+    console.log(beginVertex);
+
+    const stopVertex = this._adjacencyList.get(endVertex);
+
+    stopVertex.push(new Edge(startVertex, weight));
+
+    return this;
+
+  }//end addDirectedEdge
+
   getNodes() {
     if (this._adjacencyList.size === 0) return 'Empty Graph';
 
@@ -105,5 +126,7 @@ class Graph {
   }
 
 } // end Graph class
+
+
 
 module.exports = { Vertex, Edge, Graph };

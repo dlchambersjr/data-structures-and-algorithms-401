@@ -3,6 +3,7 @@ module.exports = function () {
   return {
 
     files: [
+      'getEdge/**/*.js',
       'breadthFirst/**/*.js',
       { pattern: './**/*test.js', ignore: true },
     ],

@@ -124,6 +124,55 @@ describe('addDirectedEdge() tests', () => {
 
 });
 
+describe('addUnDirectedEdge() tests', () => {
+
+  it('will return an error if Vertice are not passed in', () => {
+    const addGraph = new Graph();
+    const actual = addGraph.addUnDirectedEdge();
+    const expected = 'Beginning AND ending vertice required';
+
+    expect(actual).toBe(expected);
+
+  });
+
+  it('will return an error if one of the vertices are not present in the graph', () => {
+    const addGraph = new Graph();
+    addGraph.addVertex(ten);
+    addGraph.addVertex(six);
+
+    const actualStart = addGraph.addUnDirectedEdge(ten, two);
+    const expectedStart = 'ending vertex not in the graph';
+    const actualEnd = addGraph.addUnDirectedEdge(two, ten);
+    const expectedEnd = 'begining vertex not in the graph';
+
+    expect(actualStart).toBe(expectedStart);
+    expect(actualEnd).toBe(expectedEnd);
+
+  });
+
+  it('will create an undirected edge between two vertice', () => {
+    const addGraph = new Graph();
+    addGraph.addVertex(ten);
+    addGraph.addVertex(six);
+    addGraph.addVertex(three);
+
+    addGraph.addUnDirectedEdge(ten, three, 100);
+    addGraph.addUnDirectedEdge(three, six, 85);
+
+    const found = addGraph._adjacencyList.get(ten).find((vert, idx) => vert.vertex.value === three.value);
+
+    const actual = found.vertex.value;
+    const expected = three.value;
+    const actualWeight = found.weight;
+    const expectedWeight = 100;
+
+    expect(actual).toEqual(expected);
+    expect(actualWeight).toEqual(expectedWeight);
+
+  });
+
+});
+
 describe('getNodes() tests', () => {
 
   it('will return EMPTY if no contents in graph', () => {
