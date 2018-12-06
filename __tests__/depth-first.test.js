@@ -320,12 +320,9 @@ describe('depthFirst() tests', () => {
 
   it('will return the vertice of the graph', () => {
     const actual = graph.depthFirst(A);
-    const expectedDFS = new Set();
-    console.log(actual);
-    expectedDFS.add(A).add(B).add(C).add(G).add(D).add(E).add(H).add(F);
-    console.log(expectedDFS);
+    const expectedDFS = [A, D, F, H, E, B, C, G];
 
-    expect(actual).toBe(expectedDFS);
+    expect(actual).toEqual(expectedDFS);
 
   });
 

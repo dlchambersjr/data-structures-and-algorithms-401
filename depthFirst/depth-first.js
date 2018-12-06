@@ -130,31 +130,28 @@ class Graph {
     if (!startVertex) { return 'Vertex Required'; }
     if (this._adjacencyList.size === 0) return 'Empty Graph';
 
-    const trackingList = [];
-    const seenVertex = new Set();
+    const trackingList = [startVertex];
+    const result = [];
+    const visited = {};
+    let currentVertex;
+    let neighborVertex;
 
-    trackingList.push(startVertex);
-    seenVertex.add(startVertex);
+    visited[startVertex.value] = true;
 
     while (trackingList.length) {
-      console.log(trackingList.length);
-      let currentVertex = trackingList.pop();
-      console.log(currentVertex);
-      console.log(seenVertex.has(currentVertex));
-
+      currentVertex = trackingList.pop();
+      result.push(currentVertex);
       let connected = this.getNeighbors(currentVertex);
-
       for (let [key, value] of connected) {
-        if (!seenVertex.has(currentVertex)) {
-          seenVertex.add(currentVertex);
-          console.log(connected);
-          const neighborVertex = key;
+        neighborVertex = key;
+
+        if (!visited[neighborVertex.value]) {
+          visited[neighborVertex.value] = true;
           trackingList.push(neighborVertex);
-          console.log(trackingList.length);
         }
       }
     }
-    return seenVertex;
+    return result;
 
   } //End depthFirst Search
 
